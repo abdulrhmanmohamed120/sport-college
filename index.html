@@ -4,739 +4,796 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>كلية علوم الرياضة | Sport Science College</title>
+    <meta name="description" content="كلية علوم الرياضة - بوابة الطالب والخدمات الأكاديمية">
+    <meta name="theme-color" content="#1e3a5f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.loading-screen{display:none!important}</style></noscript>
 </head>
 <body>
 
-    <!-- ===== LOADING ===== -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loader">
-            <div class="loader-ring"></div>
-            <p>🏅 كلية علوم الرياضة</p>
+<!-- LOADING -->
+<div class="loading-screen" id="loadingScreen" role="status" aria-label="جاري التحميل">
+    <div class="loader">
+        <div class="loader-ring"></div>
+        <p>🏅 كلية علوم الرياضة</p>
+    </div>
+</div>
+
+<!-- NEWS TICKER -->
+<div class="news-ticker" role="marquee" aria-label="آخر الأخبار">
+    <div class="ticker-label">📢 عاجل</div>
+    <div class="ticker-wrap">
+        <div class="ticker-content" id="tickerContent">
+            <span>🏆 فوز فريق الكلية ببطولة الجامعات لكرة القدم 2024</span>
+            <span>📢 فتح باب التسجيل للفصل الدراسي الثاني 2025</span>
+            <span>🎓 حفل تخريج الدفعة 25 يوم الخميس القادم</span>
+            <span>🔬 مؤتمر دولي حول علوم الرياضة - 20 يناير 2025</span>
+            <span>📊 نتائج امتحانات منتصف الفصل متاحة الآن</span>
+            <span>🏊 افتتاح المسبح الأولمبي الجديد</span>
+            <span>💪 دورة تدريبية مجانية في الإسعافات الأولية</span>
         </div>
     </div>
+</div>
 
-    <!-- ===== NEWS TICKER ===== -->
-    <div class="news-ticker" id="newsTicker">
-        <div class="ticker-label">📢 أخبار عاجلة</div>
-        <div class="ticker-wrap">
-            <div class="ticker-content" id="tickerContent">
-                <span class="ticker-item">🏆 فوز فريق الكلية ببطولة الجامعات لكرة القدم 2024</span>
-                <span class="ticker-item">📢 فتح باب التسجيل للفصل الدراسي الثاني 2025 - آخر موعد 15 يناير</span>
-                <span class="ticker-item">🎓 حفل تخريج الدفعة 25 يوم الخميس القادم بحضور رئيس الجامعة</span>
-                <span class="ticker-item">🔬 مؤتمر دولي حول علوم الرياضة والصحة - 20 يناير 2025</span>
-                <span class="ticker-item">📊 نتائج امتحانات منتصف الفصل متاحة الآن على البوابة الإلكترونية</span>
-                <span class="ticker-item">🏊 افتتاح المسبح الأولمبي الجديد بمواصفات دولية</span>
-                <span class="ticker-item">💪 دورة تدريبية مجانية في الإسعافات الأولية الرياضية</span>
-                <span class="ticker-item">📝 التسجيل في مسابقة البحث العلمي للطلاب - الجائزة 10,000 ريال</span>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="القائمة الرئيسية">
+    <div class="container">
+        <a href="#home" class="logo" aria-label="الصفحة الرئيسية - كلية علوم الرياضة">
+            <span class="logo-icon">🏛️</span>
+            <div class="logo-text">
+                <strong>كلية علوم الرياضة</strong>
+                <small lang="en">Sport Science College</small>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">الرئيسية</a></li>
+            <li><a href="#about">عن الكلية</a></li>
+            <li><a href="#departments">الأقسام</a></li>
+            <li><a href="#gallery">معرض الصور</a></li>
+            <li><a href="#student-portal">بوابة الطالب</a></li>
+            <li><a href="#grades">التقديرات</a></li>
+            <li><a href="#news">الأخبار</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+        <div class="nav-actions">
+            <div style="position:relative">
+                <button class="notif-btn" onclick="showNotifications()" aria-label="الإشعارات" title="الإشعارات">
+                    🔔<span class="notif-badge" id="notifBadge">3</span>
+                </button>
+                <div class="notif-panel" id="notifPanel" role="dialog" aria-label="قائمة الإشعارات"></div>
+            </div>
+            <button class="nav-btn" onclick="openLoginModal()" aria-label="تسجيل الدخول" title="تسجيل الدخول">🔐 دخول</button>
+            <button class="nav-btn admin-btn" onclick="openAdminPanel()" aria-label="لوحة التحكم" title="لوحة التحكم">⚙️</button>
+            <button class="dark-toggle" id="darkToggle" aria-label="تبديل الوضع الليلي" title="الوضع الليلي">🌙</button>
+            <div class="mobile-toggle" id="mobileToggle" role="button" tabindex="0" aria-label="فتح القائمة" aria-expanded="false">
+                <span></span><span></span><span></span>
             </div>
         </div>
     </div>
+</nav>
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <a href="#home" class="logo">
-                <span class="logo-icon">🏛️</span>
-                <div class="logo-text">
-                    <strong>كلية علوم الرياضة</strong>
-                    <small>Sport Science College</small>
-                </div>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" class="active">الرئيسية</a></li>
-                <li><a href="#about">عن الكلية</a></li>
-                <li><a href="#departments">الأقسام</a></li>
-                <li><a href="#gallery">معرض الصور</a></li>
-                <li><a href="#student-portal">بوابة الطالب</a></li>
-                <li><a href="#grades">التقديرات</a></li>
-                <li><a href="#news">الأخبار</a></li>
-                <li><a href="#contact">اتصل بنا</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="nav-btn" onclick="openLoginModal()">🔐 تسجيل دخول</button>
-                <button class="dark-toggle" id="darkToggle">🌙</button>
-                <div class="mobile-toggle" id="mobileToggle">
-                    <span></span><span></span><span></span>
-                </div>
+<!-- USER BAR -->
+<div class="user-bar" id="userBar" style="display:none" role="banner">
+    <div class="container">
+        <div class="user-bar-content">
+            <span>👋 مرحباً، <strong id="userBarName">الطالب</strong></span>
+            <div class="user-bar-actions">
+                <a href="#student-portal">📋 بياناتي</a>
+                <a href="#grades">📊 درجاتي</a>
+                <button onclick="logoutUser()" aria-label="تسجيل الخروج">🚪 خروج</button>
             </div>
         </div>
-    </nav>
+    </div>
+</div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-slideshow">
-            <div class="hero-slide active" style="background: linear-gradient(135deg, rgba(15,32,39,0.85), rgba(30,58,95,0.85)), url('') center/cover;">
-                <div class="slide-sport-icons">
-                    <span class="float-icon" style="top:10%;left:10%">⚽</span>
-                    <span class="float-icon" style="top:20%;right:15%">🏀</span>
-                    <span class="float-icon" style="bottom:30%;left:20%">🏊</span>
-                    <span class="float-icon" style="bottom:20%;right:10%">🏃</span>
-                    <span class="float-icon" style="top:50%;left:5%">🏋️</span>
-                    <span class="float-icon" style="top:40%;right:5%">🤾</span>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-bg" aria-hidden="true">
+        <span class="float-icon" style="top:10%;left:10%">⚽</span>
+        <span class="float-icon" style="top:20%;right:15%">🏀</span>
+        <span class="float-icon" style="bottom:30%;left:20%">🏊</span>
+        <span class="float-icon" style="bottom:20%;right:10%">🏃</span>
+        <span class="float-icon" style="top:50%;left:5%">🏋️</span>
+        <span class="float-icon" style="top:40%;right:5%">🤾</span>
+    </div>
+    <div class="container hero-container">
+        <div class="hero-badge">🏆 معتمدة من وزارة التعليم العالي</div>
+        <h1>كلية <span class="highlight">علوم الرياضة</span></h1>
+        <p class="hero-sub">نصنع قادة الرياضة وأبطال المستقبل من خلال التعليم الأكاديمي المتميز</p>
+        <div class="hero-stats" role="list" aria-label="إحصائيات الكلية">
+            <div class="h-stat" role="listitem"><span class="h-num" data-target="5000">0</span><small>خريج</small></div>
+            <div class="h-stat" role="listitem"><span class="h-num" data-target="1200">0</span><small>طالب</small></div>
+            <div class="h-stat" role="listitem"><span class="h-num" data-target="85">0</span><small>أستاذ</small></div>
+            <div class="h-stat" role="listitem"><span class="h-num" data-target="25">0</span><small>سنة</small></div>
         </div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">🏆 معتمدة من وزارة التعليم العالي</div>
-                <h1>كلية <span class="highlight" id="heroTyping">علوم الرياضة</span></h1>
-                <p class="hero-subtitle">نصنع قادة الرياضة وأبطال المستقبل من خلال التعليم الأكاديمي المتميز</p>
-                <div class="hero-stats-row">
-                    <div class="hero-stat"><span class="h-counter" data-target="5000">0</span><small>خريج</small></div>
-                    <div class="hero-stat"><span class="h-counter" data-target="1200">0</span><small>طالب حالي</small></div>
-                    <div class="hero-stat"><span class="h-counter" data-target="85">0</span><small>أستاذ</small></div>
-                    <div class="hero-stat"><span class="h-counter" data-target="25">0</span><small>سنة تميز</small></div>
-                </div>
-                <div class="hero-buttons">
-                    <button class="btn btn-gold" onclick="openLoginModal()">🔐 بوابة الطالب</button>
-                    <a href="#student-portal" class="btn btn-outline-white">📝 استعلام بالرقم القومي</a>
-                    <a href="#about" class="btn btn-ghost">🎯 اكتشف الكلية</a>
-                </div>
-            </div>
+        <div class="hero-btns">
+            <button class="btn btn-gold" onclick="openLoginModal()">🔐 بوابة الطالب</button>
+            <a href="#student-portal" class="btn btn-outline">📝 استعلام بالرقم القومي</a>
+            <a href="#about" class="btn btn-ghost">🎯 اكتشف الكلية</a>
         </div>
-        <div class="hero-wave">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
-            </svg>
-        </div>
-    </section>
+    </div>
+    <div class="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
+        </svg>
+    </div>
+</section>
 
-    <!-- ===== SPORT IMAGE GALLERY ===== -->
-    <section class="sport-gallery" id="gallery">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">📸 معرض الصور</span>
-                <h2>لحظات رياضية مميزة</h2>
-                <p>صور تفاعلية من أنشطة وفعاليات الكلية الرياضية</p>
+<!-- GALLERY -->
+<section class="section gallery" id="gallery">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">📸 معرض الصور</span>
+            <h2>لحظات رياضية مميزة</h2>
+        </div>
+        <div class="gallery-filters fade-up" role="tablist" aria-label="فلترة الصور">
+            <button class="gf active" data-f="all" role="tab" aria-selected="true">الكل</button>
+            <button class="gf" data-f="football" role="tab">كرة القدم</button>
+            <button class="gf" data-f="basketball" role="tab">كرة السلة</button>
+            <button class="gf" data-f="swimming" role="tab">السباحة</button>
+            <button class="gf" data-f="athletics" role="tab">ألعاب القوى</button>
+            <button class="gf" data-f="gym" role="tab">اللياقة</button>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+            <div class="g-item" data-cat="football" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)"><span>⚽</span>
+                    <div class="g-over"><h4>نهائي بطولة الجامعات</h4><p>📅 ديسمبر 2024</p></div>
+                </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>124</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 23</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
+                </div>
             </div>
-            <div class="gallery-filters fade-up">
-                <button class="gal-filter active" data-filter="all">الكل</button>
-                <button class="gal-filter" data-filter="football">كرة القدم</button>
-                <button class="gal-filter" data-filter="basketball">كرة السلة</button>
-                <button class="gal-filter" data-filter="swimming">السباحة</button>
-                <button class="gal-filter" data-filter="athletics">ألعاب القوى</button>
-                <button class="gal-filter" data-filter="gym">اللياقة البدنية</button>
+            <div class="g-item" data-cat="basketball" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#b7410e,#d4652a)"><span>🏀</span>
+                    <div class="g-over"><h4>تدريبات كرة السلة</h4><p>📅 نوفمبر 2024</p></div>
+                </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>89</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 15</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
+                </div>
             </div>
-            <div class="gallery-grid" id="galleryGrid">
-                <div class="gallery-item" data-category="football" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #1a5632, #2d8a4e);">
-                        <span>⚽</span>
-                        <div class="gallery-overlay">
-                            <h4>مباراة نهائي بطولة الجامعات</h4>
-                            <p>📅 ديسمبر 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>124</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>23</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+            <div class="g-item" data-cat="swimming" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)"><span>🏊</span>
+                    <div class="g-over"><h4>بطولة السباحة</h4><p>📅 أكتوبر 2024</p></div>
                 </div>
-                <div class="gallery-item" data-category="basketball" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #b7410e, #d4652a);">
-                        <span>🏀</span>
-                        <div class="gallery-overlay">
-                            <h4>تدريبات فريق كرة السلة</h4>
-                            <p>📅 نوفمبر 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>89</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>15</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>156</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 31</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
                 </div>
-                <div class="gallery-item" data-category="swimming" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #1e3a5f, #2d5f8a);">
-                        <span>🏊</span>
-                        <div class="gallery-overlay">
-                            <h4>بطولة السباحة الجامعية</h4>
-                            <p>📅 أكتوبر 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>156</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>31</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+            </div>
+            <div class="g-item" data-cat="athletics" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#4a1a6b,#7b3fa0)"><span>🏃</span>
+                    <div class="g-over"><h4>سباق 100 متر</h4><p>📅 سبتمبر 2024</p></div>
                 </div>
-                <div class="gallery-item" data-category="athletics" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #4a1a6b, #7b3fa0);">
-                        <span>🏃</span>
-                        <div class="gallery-overlay">
-                            <h4>سباق 100 متر - رقم جديد</h4>
-                            <p>📅 سبتمبر 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>203</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>45</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>203</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 45</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
                 </div>
-                <div class="gallery-item" data-category="gym" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #c0392b, #e74c3c);">
-                        <span>🏋️</span>
-                        <div class="gallery-overlay">
-                            <h4>صالة اللياقة الجديدة</h4>
-                            <p>📅 أغسطس 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>78</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>12</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+            </div>
+            <div class="g-item" data-cat="gym" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#c0392b,#e74c3c)"><span>🏋️</span>
+                    <div class="g-over"><h4>صالة اللياقة الجديدة</h4><p>📅 أغسطس 2024</p></div>
                 </div>
-                <div class="gallery-item" data-category="football" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #16a085, #1abc9c);">
-                        <span>🤾</span>
-                        <div class="gallery-overlay">
-                            <h4>تدريبات فريق كرة اليد</h4>
-                            <p>📅 يوليو 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>95</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>18</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>78</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 12</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
                 </div>
-                <div class="gallery-item" data-category="swimming" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #2980b9, #3498db);">
-                        <span>🏄</span>
-                        <div class="gallery-overlay">
-                            <h4>حصة سباحة عملية</h4>
-                            <p>📅 يونيو 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>67</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>9</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+            </div>
+            <div class="g-item" data-cat="football" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#16a085,#1abc9c)"><span>🤾</span>
+                    <div class="g-over"><h4>تدريبات كرة اليد</h4><p>📅 يوليو 2024</p></div>
                 </div>
-                <div class="gallery-item" data-category="athletics" onclick="openImageModal(this)">
-                    <div class="gallery-img" style="background: linear-gradient(135deg, #e67e22, #f39c12);">
-                        <span>🏅</span>
-                        <div class="gallery-overlay">
-                            <h4>تتويج أبطال الكلية</h4>
-                            <p>📅 مايو 2024</p>
-                            <span class="gallery-zoom">🔍</span>
-                        </div>
-                    </div>
-                    <div class="gallery-actions">
-                        <button onclick="event.stopPropagation();likePhoto(this)">❤️ <span>312</span></button>
-                        <button onclick="event.stopPropagation()">💬 <span>56</span></button>
-                        <button onclick="event.stopPropagation()">📤 مشاركة</button>
-                    </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>95</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 18</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
+                </div>
+            </div>
+            <div class="g-item" data-cat="swimming" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#2980b9,#3498db)"><span>🏄</span>
+                    <div class="g-over"><h4>حصة سباحة عملية</h4><p>📅 يونيو 2024</p></div>
+                </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>67</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 9</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
+                </div>
+            </div>
+            <div class="g-item" data-cat="athletics" onclick="openLightbox(this)">
+                <div class="g-img" style="background:linear-gradient(135deg,#e67e22,#f39c12)"><span>🏅</span>
+                    <div class="g-over"><h4>تتويج أبطال الكلية</h4><p>📅 مايو 2024</p></div>
+                </div>
+                <div class="g-actions">
+                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>312</span></button>
+                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 56</button>
+                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ===== ABOUT ===== -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">🏛️ عن الكلية</span>
-                <h2>كلية علوم الرياضة</h2>
-                <p>ريادة أكاديمية في علوم الرياضة والتربية البدنية</p>
+<!-- ABOUT -->
+<section class="section about" id="about">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">🏛️ عن الكلية</span>
+            <h2>كلية علوم الرياضة</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-img fade-up">
+                <div class="about-box">🏟️</div>
+                <div class="about-bdg"><strong>+25</strong><span>سنة تميز</span></div>
             </div>
-            <div class="about-grid">
-                <div class="about-image fade-up">
-                    <div class="about-img-box">🏟️</div>
-                    <div class="about-badge"><strong>+25</strong><span>سنة تميز</span></div>
+            <div class="about-text fade-up">
+                <h3>بناء جيل <span class="gold">رياضي متميز</span></h3>
+                <p>تأسست كلية علوم الرياضة بهدف إعداد كوادر متخصصة في التربية الرياضية والتدريب الرياضي والإدارة الرياضية وعلوم الحركة.</p>
+                <div class="about-feats">
+                    <div>✅ فريق أكاديمي متميز</div>
+                    <div>✅ مرافق رياضية حديثة</div>
+                    <div>✅ اعتماد أكاديمي دولي</div>
+                    <div>✅ تدريب ميداني عملي</div>
+                    <div>✅ بحث علمي متقدم</div>
+                    <div>✅ شراكات دولية</div>
                 </div>
-                <div class="about-content fade-up">
-                    <h3>بناء جيل <span class="text-gold">رياضي متميز</span></h3>
-                    <p>تأسست كلية علوم الرياضة بهدف إعداد كوادر متخصصة في مجالات التربية الرياضية والتدريب الرياضي والإدارة الرياضية وعلوم الحركة.</p>
-                    <div class="about-features">
-                        <div class="about-feat"><span>✅</span> فريق أكاديمي متميز</div>
-                        <div class="about-feat"><span>✅</span> مرافق رياضية حديثة</div>
-                        <div class="about-feat"><span>✅</span> اعتماد أكاديمي دولي</div>
-                        <div class="about-feat"><span>✅</span> تدريب ميداني عملي</div>
-                        <div class="about-feat"><span>✅</span> بحث علمي متقدم</div>
-                        <div class="about-feat"><span>✅</span> شراكات دولية</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DEPARTMENTS -->
+<section class="section depts" id="departments">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">🏫 الأقسام</span>
+            <h2>أقسام الكلية</h2>
+        </div>
+        <div class="dept-grid">
+            <div class="dept-card fade-up">
+                <div class="dept-h" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)"><span>⚽</span><div>01</div></div>
+                <div class="dept-b"><h3>التربية الرياضية</h3><p>إعداد معلمي التربية الرياضية المؤهلين</p><div class="dept-tags"><span>🎓 350 طالب</span><span>👨‍🏫 22 أستاذ</span></div></div>
+            </div>
+            <div class="dept-card fade-up">
+                <div class="dept-h" style="background:linear-gradient(135deg,#b7410e,#d4652a)"><span>🏋️</span><div>02</div></div>
+                <div class="dept-b"><h3>التدريب الرياضي</h3><p>تأهيل مدربين رياضيين متخصصين</p><div class="dept-tags"><span>🎓 280 طالب</span><span>👨‍🏫 20 أستاذ</span></div></div>
+            </div>
+            <div class="dept-card fade-up">
+                <div class="dept-h" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)"><span>📋</span><div>03</div></div>
+                <div class="dept-b"><h3>الإدارة الرياضية</h3><p>إدارة المؤسسات والأندية الرياضية</p><div class="dept-tags"><span>🎓 300 طالب</span><span>👨‍🏫 18 أستاذ</span></div></div>
+            </div>
+            <div class="dept-card fade-up">
+                <div class="dept-h" style="background:linear-gradient(135deg,#4a1a6b,#7b3fa0)"><span>🔬</span><div>04</div></div>
+                <div class="dept-b"><h3>علوم الحركة والصحة</h3><p>دراسة الحركة البشرية والتأهيل الرياضي</p><div class="dept-tags"><span>🎓 270 طالب</span><span>👨‍🏫 25 أستاذ</span></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT PORTAL -->
+<section class="section portal" id="student-portal">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">🔍 بوابة الطالب</span>
+            <h2>استعلام بيانات الطالب</h2>
+            <p>أدخل الرقم القومي للاستعلام عن بياناتك الأكاديمية</p>
+        </div>
+        <div class="portal-box fade-up">
+            <div class="search-box">
+                <div class="search-icon">🆔</div>
+                <h3>البحث بالرقم القومي</h3>
+                <div class="search-row">
+                    <input type="text" id="nidInput" placeholder="أدخل الرقم القومي (14 رقم)" maxlength="14" inputmode="numeric" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'')" aria-label="الرقم القومي">
+                    <button onclick="searchStudent()" class="search-btn" aria-label="بحث">🔍 بحث</button>
+                </div>
+                <div class="test-hint">
+                    <p>🧪 <strong>أرقام تجريبية:</strong></p>
+                    <div class="test-btns">
+                        <button onclick="fillId('29901011234567')">29901011234567</button>
+                        <button onclick="fillId('30001151234567')">30001151234567</button>
+                        <button onclick="fillId('29805201234567')">29805201234567</button>
+                        <button onclick="fillId('30103081234567')">30103081234567</button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ===== DEPARTMENTS ===== -->
-    <section class="departments section" id="departments">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">🏫 الأقسام</span>
-                <h2>أقسام الكلية</h2>
+        <!-- STUDENT RESULT -->
+        <div class="student-result" id="studentResult" style="display:none" role="region" aria-label="نتيجة البحث">
+            <div class="result-head">
+                <div class="s-avatar" id="sAvatar">👨‍🎓</div>
+                <div class="s-info">
+                    <h3 id="sName">-</h3>
+                    <span class="s-id" id="sIdDisplay">-</span>
+                    <div class="s-tags">
+                        <span class="tag tag-y" id="sYear">-</span>
+                        <span class="tag tag-d" id="sDept">-</span>
+                        <span class="tag tag-s" id="sStatus">-</span>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="closeResult()" aria-label="إغلاق">✕</button>
+                <button class="print-btn" onclick="printReport()" aria-label="طباعة التقرير" title="طباعة">🖨️</button>
             </div>
-            <div class="dept-grid">
-                <div class="dept-card fade-up">
-                    <div class="dept-header" style="background: linear-gradient(135deg, #1e3a5f, #2d5f8a);">
-                        <span>⚽</span><div class="dept-num">01</div>
-                    </div>
-                    <div class="dept-body">
-                        <h3>التربية الرياضية</h3>
-                        <p>إعداد معلمي التربية الرياضية المؤهلين</p>
-                        <div class="dept-tags"><span>🎓 350 طالب</span><span>👨‍🏫 22 أستاذ</span></div>
-                    </div>
-                </div>
-                <div class="dept-card fade-up">
-                    <div class="dept-header" style="background: linear-gradient(135deg, #b7410e, #d4652a);">
-                        <span>🏋️</span><div class="dept-num">02</div>
-                    </div>
-                    <div class="dept-body">
-                        <h3>التدريب الرياضي</h3>
-                        <p>تأهيل مدربين رياضيين متخصصين</p>
-                        <div class="dept-tags"><span>🎓 280 طالب</span><span>👨‍🏫 20 أستاذ</span></div>
-                    </div>
-                </div>
-                <div class="dept-card fade-up">
-                    <div class="dept-header" style="background: linear-gradient(135deg, #1a5632, #2d8a4e);">
-                        <span>📋</span><div class="dept-num">03</div>
-                    </div>
-                    <div class="dept-body">
-                        <h3>الإدارة الرياضية</h3>
-                        <p>إدارة المؤسسات والأندية الرياضية</p>
-                        <div class="dept-tags"><span>🎓 300 طالب</span><span>👨‍🏫 18 أستاذ</span></div>
-                    </div>
-                </div>
-                <div class="dept-card fade-up">
-                    <div class="dept-header" style="background: linear-gradient(135deg, #4a1a6b, #7b3fa0);">
-                        <span>🔬</span><div class="dept-num">04</div>
-                    </div>
-                    <div class="dept-body">
-                        <h3>علوم الحركة والصحة</h3>
-                        <p>دراسة الحركة البشرية والتأهيل الرياضي</p>
-                        <div class="dept-tags"><span>🎓 270 طالب</span><span>👨‍🏫 25 أستاذ</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== STUDENT PORTAL - NATIONAL ID LOOKUP ===== -->
-    <section class="student-portal section" id="student-portal">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">🔍 بوابة الطالب</span>
-                <h2>استعلام بيانات الطالب</h2>
-                <p>أدخل الرقم القومي للاستعلام عن بياناتك الأكاديمية</p>
+            <div class="result-tabs" id="resultTabs" role="tablist">
+                <button class="rtab active" data-rt="info" role="tab" aria-selected="true">📋 البيانات</button>
+                <button class="rtab" data-rt="grades" role="tab">📊 الدرجات</button>
+                <button class="rtab" data-rt="monthly" role="tab">📅 التقييم الشهري</button>
+                <button class="rtab" data-rt="schedule" role="tab">🗓️ الجدول</button>
+                <button class="rtab" data-rt="attendance" role="tab">📋 الحضور</button>
             </div>
 
-            <div class="portal-wrapper fade-up">
-                <!-- Search Box -->
-                <div class="portal-search">
-                    <div class="search-box">
-                        <div class="search-icon">🆔</div>
-                        <h3>البحث بالرقم القومي</h3>
-                        <p>أدخل الرقم القومي المكون من 14 رقم</p>
-                        <div class="search-input-group">
-                            <input type="text" id="nationalIdInput" placeholder="أدخل الرقم القومي (14 رقم)" maxlength="14" pattern="[0-9]*">
-                            <button onclick="searchStudent()" id="searchBtn">🔍 بحث</button>
+            <div class="rcontent active" id="rt-info" role="tabpanel">
+                <div class="info-grid" id="infoGrid"></div>
+            </div>
+            <div class="rcontent" id="rt-grades" role="tabpanel">
+                <div class="gpa-summary">
+                    <div class="gpa-circle">
+                        <svg viewBox="0 0 100 100" aria-hidden="true">
+                            <circle cx="50" cy="50" r="45" class="gpa-bg"/>
+                            <circle cx="50" cy="50" r="45" class="gpa-fill" id="gpaFill"/>
+                        </svg>
+                        <div class="gpa-txt">
+                            <span id="gpaVal">0.00</span>
+                            <small lang="en">GPA</small>
                         </div>
-                        <div class="search-hint">
-                            <p>🧪 <strong>أرقام تجريبية للاختبار:</strong></p>
-                            <div class="test-ids">
-                                <button onclick="fillTestId('29901011234567')">29901011234567</button>
-                                <button onclick="fillTestId('30001151234567')">30001151234567</button>
-                                <button onclick="fillTestId('29805201234567')">29805201234567</button>
-                                <button onclick="fillTestId('30103081234567')">30103081234567</button>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="gpa-cards">
+                        <div class="gc"><span id="gcDone">0</span><small>ساعة مكتملة</small></div>
+                        <div class="gc"><span id="gcLeft">0</span><small>ساعة متبقية</small></div>
+                        <div class="gc"><span id="gcGrade">-</span><small>التقدير</small></div>
+                        <div class="gc"><span id="gcRank">-</span><small>الترتيب</small></div>
                     </div>
                 </div>
-
-                <!-- Student Result -->
-                <div class="student-result" id="studentResult" style="display:none;">
-                    <div class="result-header">
-                        <div class="student-avatar" id="studentAvatar">👨‍🎓</div>
-                        <div class="student-main-info">
-                            <h3 id="studentName">-</h3>
-                            <span class="student-id-display" id="studentIdDisplay">-</span>
-                            <div class="student-tags">
-                                <span class="tag tag-year" id="studentYear">-</span>
-                                <span class="tag tag-dept" id="studentDept">-</span>
-                                <span class="tag tag-status" id="studentStatus">-</span>
-                            </div>
-                        </div>
-                        <button class="close-result" onclick="closeResult()">✕</button>
-                    </div>
-
-                    <div class="result-tabs">
-                        <button class="result-tab active" data-rtab="info">📋 البيانات</button>
-                        <button class="result-tab" data-rtab="grades">📊 الدرجات</button>
-                        <button class="result-tab" data-rtab="monthly">📅 التقييم الشهري</button>
-                        <button class="result-tab" data-rtab="schedule">🗓️ الجدول</button>
-                    </div>
-
-                    <!-- Info Tab -->
-                    <div class="result-content active" id="rtab-info">
-                        <div class="info-grid">
-                            <div class="info-card">
-                                <span class="info-label">الاسم الكامل</span>
-                                <span class="info-value" id="infoName">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">الرقم القومي</span>
-                                <span class="info-value" id="infoNationalId">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">رقم الطالب الجامعي</span>
-                                <span class="info-value" id="infoUniId">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">السنة الدراسية</span>
-                                <span class="info-value" id="infoYear">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">القسم</span>
-                                <span class="info-value" id="infoDept">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">المعدل التراكمي (GPA)</span>
-                                <span class="info-value gpa" id="infoGpa">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">التقدير العام</span>
-                                <span class="info-value" id="infoGrade">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">الساعات المكتملة</span>
-                                <span class="info-value" id="infoHours">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">تاريخ الميلاد</span>
-                                <span class="info-value" id="infoDob">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">البريد الجامعي</span>
-                                <span class="info-value" id="infoEmail">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">رقم الهاتف</span>
-                                <span class="info-value" id="infoPhone">-</span>
-                            </div>
-                            <div class="info-card">
-                                <span class="info-label">حالة القيد</span>
-                                <span class="info-value" id="infoEnrollment">-</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Grades Tab -->
-                    <div class="result-content" id="rtab-grades">
-                        <div class="grades-summary">
-                            <div class="gpa-circle" id="gpaCircle">
-                                <svg viewBox="0 0 100 100">
-                                    <circle cx="50" cy="50" r="45" class="gpa-bg"/>
-                                    <circle cx="50" cy="50" r="45" class="gpa-fill" id="gpaFill"/>
-                                </svg>
-                                <div class="gpa-text">
-                                    <span id="gpaValue">0.00</span>
-                                    <small>GPA</small>
-                                </div>
-                            </div>
-                            <div class="grade-summary-cards">
-                                <div class="gs-card"><span class="gs-num" id="gsCompleted">0</span><small>ساعة مكتملة</small></div>
-                                <div class="gs-card"><span class="gs-num" id="gsRemaining">0</span><small>ساعة متبقية</small></div>
-                                <div class="gs-card"><span class="gs-num" id="gsGrade">-</span><small>التقدير</small></div>
-                                <div class="gs-card"><span class="gs-num" id="gsRank">-</span><small>الترتيب</small></div>
-                            </div>
-                        </div>
-                        <table class="grades-table">
-                            <thead>
-                                <tr>
-                                    <th>المقرر</th>
-                                    <th>الرمز</th>
-                                    <th>الساعات</th>
-                                    <th>أعمال السنة</th>
-                                    <th>النهائي</th>
-                                    <th>المجموع</th>
-                                    <th>التقدير</th>
-                                </tr>
-                            </thead>
-                            <tbody id="gradesTableBody">
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Monthly Evaluation Tab -->
-                    <div class="result-content" id="rtab-monthly">
-                        <h4 class="eval-title">📅 التقييم الشهري للطالب</h4>
-                        <div class="monthly-grid" id="monthlyGrid">
-                        </div>
-                        <div class="eval-chart">
-                            <h4>📈 مخطط الأداء الشهري</h4>
-                            <div class="chart-container" id="chartContainer">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Schedule Tab -->
-                    <div class="result-content" id="rtab-schedule">
-                        <h4 class="schedule-title">🗓️ الجدول الدراسي - الفصل الحالي</h4>
-                        <table class="schedule-table">
-                            <thead>
-                                <tr>
-                                    <th>اليوم</th>
-                                    <th>8:00 - 10:00</th>
-                                    <th>10:00 - 12:00</th>
-                                    <th>12:00 - 2:00</th>
-                                    <th>2:00 - 4:00</th>
-                                </tr>
-                            </thead>
-                            <tbody id="scheduleBody">
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead><tr><th>المقرر</th><th>الرمز</th><th>ساعات</th><th>أعمال سنة</th><th>نهائي</th><th>المجموع</th><th>التقدير</th></tr></thead>
+                        <tbody id="gradesBody"></tbody>
+                    </table>
                 </div>
+            </div>
+            <div class="rcontent" id="rt-monthly" role="tabpanel">
+                <h4>📅 التقييم الشهري</h4>
+                <div class="month-grid" id="monthGrid"></div>
+                <h4>📈 مخطط الأداء</h4>
+                <div class="chart-box" id="chartBox"></div>
+            </div>
+            <div class="rcontent" id="rt-schedule" role="tabpanel">
+                <h4>🗓️ الجدول الدراسي</h4>
+                <div class="table-responsive">
+                    <table class="data-table schedule-tbl">
+                        <thead><tr><th>اليوم</th><th>8-10</th><th>10-12</th><th>12-2</th><th>2-4</th></tr></thead>
+                        <tbody id="schedBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="rcontent" id="rt-attendance" role="tabpanel">
+                <div id="attContent"></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- ===== GRADES SYSTEM ===== -->
-    <section class="grades-section section" id="grades">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">📊 نظام التقديرات</span>
-                <h2>نظام الدرجات والتقديرات</h2>
-                <p>النظام المعتمد في كلية علوم الرياضة</p>
-            </div>
-            <div class="grades-info-grid fade-up">
-                <div class="grade-scale-card">
-                    <h3>📋 مقياس التقديرات</h3>
-                    <table class="scale-table">
+<!-- GRADES SYSTEM -->
+<section class="section grades-sys" id="grades">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">📊 التقديرات</span>
+            <h2>نظام الدرجات والتقديرات</h2>
+        </div>
+        <div class="grades-grid fade-up">
+            <div class="grade-card">
+                <h3>📋 مقياس التقديرات</h3>
+                <div class="table-responsive">
+                    <table class="data-table scale-tbl">
                         <thead><tr><th>الدرجة</th><th>التقدير</th><th>الرمز</th><th>النقاط</th></tr></thead>
                         <tbody>
-                            <tr class="grade-a-plus"><td>95 - 100</td><td>ممتاز مرتفع</td><td>A+</td><td>4.00</td></tr>
-                            <tr class="grade-a"><td>90 - 94</td><td>ممتاز</td><td>A</td><td>3.75</td></tr>
-                            <tr class="grade-b-plus"><td>85 - 89</td><td>جيد جداً مرتفع</td><td>B+</td><td>3.50</td></tr>
-                            <tr class="grade-b"><td>80 - 84</td><td>جيد جداً</td><td>B</td><td>3.00</td></tr>
-                            <tr class="grade-c-plus"><td>75 - 79</td><td>جيد مرتفع</td><td>C+</td><td>2.50</td></tr>
-                            <tr class="grade-c"><td>70 - 74</td><td>جيد</td><td>C</td><td>2.00</td></tr>
-                            <tr class="grade-d-plus"><td>65 - 69</td><td>مقبول مرتفع</td><td>D+</td><td>1.50</td></tr>
-                            <tr class="grade-d"><td>60 - 64</td><td>مقبول</td><td>D</td><td>1.00</td></tr>
-                            <tr class="grade-f"><td>أقل من 60</td><td>راسب</td><td>F</td><td>0.00</td></tr>
+                            <tr class="gr-a"><td>95-100</td><td>ممتاز مرتفع</td><td lang="en">A+</td><td>4.00</td></tr>
+                            <tr class="gr-a"><td>90-94</td><td>ممتاز</td><td lang="en">A</td><td>3.75</td></tr>
+                            <tr class="gr-b"><td>85-89</td><td>جيد جداً+</td><td lang="en">B+</td><td>3.50</td></tr>
+                            <tr class="gr-b"><td>80-84</td><td>جيد جداً</td><td lang="en">B</td><td>3.00</td></tr>
+                            <tr class="gr-c"><td>75-79</td><td>جيد+</td><td lang="en">C+</td><td>2.50</td></tr>
+                            <tr class="gr-c"><td>70-74</td><td>جيد</td><td lang="en">C</td><td>2.00</td></tr>
+                            <tr class="gr-d"><td>65-69</td><td>مقبول+</td><td lang="en">D+</td><td>1.50</td></tr>
+                            <tr class="gr-d"><td>60-64</td><td>مقبول</td><td lang="en">D</td><td>1.00</td></tr>
+                            <tr class="gr-f"><td>أقل من 60</td><td>راسب</td><td lang="en">F</td><td>0.00</td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="grade-calculator-card">
-                    <h3>🧮 حاسبة المعدل التراكمي</h3>
-                    <div class="calc-courses" id="calcCourses">
-                        <div class="calc-row">
-                            <input type="text" placeholder="اسم المقرر">
-                            <select><option>3</option><option>2</option><option>4</option><option>1</option></select>
-                            <select>
-                                <option value="4.00">A+ (4.00)</option>
-                                <option value="3.75">A (3.75)</option>
-                                <option value="3.50">B+ (3.50)</option>
-                                <option value="3.00">B (3.00)</option>
-                                <option value="2.50">C+ (2.50)</option>
-                                <option value="2.00">C (2.00)</option>
-                                <option value="1.50">D+ (1.50)</option>
-                                <option value="1.00">D (1.00)</option>
-                                <option value="0.00">F (0.00)</option>
-                            </select>
-                            <button class="remove-row" onclick="this.parentElement.remove()">✕</button>
+            </div>
+            <div class="grade-card">
+                <h3>🧮 حاسبة المعدل</h3>
+                <div id="calcRows">
+                    <div class="calc-row">
+                        <input placeholder="المقرر" aria-label="اسم المقرر">
+                        <select class="calc-hrs" aria-label="عدد الساعات"><option>3</option><option>2</option><option>4</option><option>1</option></select>
+                        <select class="calc-gr" aria-label="التقدير"><option value="4.00">A+</option><option value="3.75">A</option><option value="3.50">B+</option><option value="3.00">B</option><option value="2.50">C+</option><option value="2.00">C</option><option value="1.50">D+</option><option value="1.00">D</option><option value="0.00">F</option></select>
+                        <button class="del-row" onclick="this.parentElement.remove()" aria-label="حذف">✕</button>
+                    </div>
+                </div>
+                <div class="calc-btns">
+                    <button onclick="addCalcRow()">➕ إضافة مقرر</button>
+                    <button onclick="calcGPA()">🧮 حساب المعدل</button>
+                </div>
+                <div class="calc-res" id="calcRes" style="display:none">
+                    <div class="calc-gpa" id="calcGpa">0.00</div>
+                    <div id="calcGrade">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWS -->
+<section class="section" id="news">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">📰 الأخبار</span>
+            <h2>أخبار الكلية</h2>
+        </div>
+        <div class="news-grid">
+            <article class="news-card nf fade-up">
+                <div class="news-img" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)">
+                    <span>🏆</span>
+                    <div class="news-date"><strong>15</strong><span>ديسمبر</span></div>
+                </div>
+                <div class="news-body">
+                    <span class="news-cat">فعاليات</span>
+                    <h3>فوز فريق الكلية ببطولة الجامعات لألعاب القوى</h3>
+                    <p>حققت الكلية إنجازاً مميزاً بالمركز الأول في بطولة الجامعات السنوية...</p>
+                    <a href="#" class="read-more">اقرأ المزيد ←</a>
+                </div>
+            </article>
+            <article class="news-card fade-up">
+                <div class="news-img" style="background:linear-gradient(135deg,#b7410e,#d4652a)">
+                    <span>📢</span>
+                    <div class="news-date"><strong>12</strong><span>ديسمبر</span></div>
+                </div>
+                <div class="news-body">
+                    <span class="news-cat">أكاديمي</span>
+                    <h3>فتح باب القبول للفصل الدراسي الثاني</h3>
+                    <p>تعلن الكلية عن فتح باب التسجيل والقبول...</p>
+                    <a href="#" class="read-more">اقرأ المزيد ←</a>
+                </div>
+            </article>
+            <article class="news-card fade-up">
+                <div class="news-img" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)">
+                    <span>🔬</span>
+                    <div class="news-date"><strong>08</strong><span>ديسمبر</span></div>
+                </div>
+                <div class="news-body">
+                    <span class="news-cat">بحث علمي</span>
+                    <h3>مؤتمر دولي حول علوم الرياضة والصحة</h3>
+                    <p>تنظم الكلية المؤتمر الدولي الخامس بمشاركة 15 دولة...</p>
+                    <a href="#" class="read-more">اقرأ المزيد ←</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+    <div class="container">
+        <div class="section-title fade-up">
+            <span class="badge">📞 اتصل بنا</span>
+            <h2>تواصل معنا</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info fade-up">
+                <div class="c-card"><div class="c-icon">📍</div><div><h4>العنوان</h4><p>المدينة الجامعية، الرياض</p></div></div>
+                <div class="c-card"><div class="c-icon">📞</div><div><h4>الهاتف</h4><p dir="ltr" lang="en">+966 11 234 5678</p></div></div>
+                <div class="c-card"><div class="c-icon">📧</div><div><h4>البريد</h4><p dir="ltr" lang="en">info@ssc.edu.sa</p></div></div>
+                <div class="c-card"><div class="c-icon">⏰</div><div><h4>الدوام</h4><p>أحد-خميس: 8ص-4م</p></div></div>
+            </div>
+            <form class="contact-form fade-up" id="contactForm" novalidate>
+                <h3>📩 أرسل رسالة</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="contactName">الاسم *</label>
+                        <input id="contactName" required placeholder="اسمك الكامل">
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">البريد *</label>
+                        <input id="contactEmail" type="email" required placeholder="بريدك الإلكتروني">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">الموضوع</label>
+                    <input id="contactSubject" placeholder="موضوع الرسالة">
+                </div>
+                <div class="form-group">
+                    <label for="contactMsg">الرسالة *</label>
+                    <textarea id="contactMsg" required placeholder="اكتب رسالتك..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">📨 إرسال</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="f-logo">
+                    <span>🏛️</span>
+                    <div><strong>كلية علوم الرياضة</strong><small lang="en">Sport Science College</small></div>
+                </div>
+                <p>نسعى لتحقيق الريادة في علوم الرياضة والتربية البدنية</p>
+                <div class="f-social">
+                    <a href="#" aria-label="تويتر">🐦</a>
+                    <a href="#" aria-label="انستغرام">📸</a>
+                    <a href="#" aria-label="فيسبوك">📘</a>
+                    <a href="#" aria-label="يوتيوب">▶️</a>
+                </div>
+            </div>
+            <div>
+                <h4>روابط</h4>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن الكلية</a></li>
+                    <li><a href="#departments">الأقسام</a></li>
+                    <li><a href="#student-portal">بوابة الطالب</a></li>
+                    <li><a href="#contact">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>خدمات</h4>
+                <ul>
+                    <li><a href="#student-portal">استعلام بالرقم القومي</a></li>
+                    <li><a href="#grades">نظام التقديرات</a></li>
+                    <li><a href="#">النتائج</a></li>
+                    <li><a href="#">الجدول الدراسي</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>الأقسام</h4>
+                <ul>
+                    <li><a href="#">التربية الرياضية</a></li>
+                    <li><a href="#">التدريب الرياضي</a></li>
+                    <li><a href="#">الإدارة الرياضية</a></li>
+                    <li><a href="#">علوم الحركة</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="f-bottom">
+            <p>© 2025 كلية علوم الرياضة 🏅 جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+</footer>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+    <button class="cw-btn" onclick="toggleChat()" aria-label="المحادثة المباشرة" title="المحادثة المباشرة">💬<span class="cw-badge">1</span></button>
+    <div class="cw-panel" id="cwPanel" role="dialog" aria-label="المحادثة المباشرة">
+        <div class="cw-head">
+            <h4>💬 المحادثات</h4>
+            <button onclick="toggleChat()" aria-label="إغلاق المحادثة">✕</button>
+        </div>
+        <div class="cw-msgs" id="cwMsgs" role="log" aria-live="polite">
+            <div class="msg msg-r"><div class="msg-b"><p>مرحباً! كيف يمكنني مساعدتك؟</p><small>المرشد الأكاديمي</small></div></div>
+        </div>
+        <div class="cw-input">
+            <input id="cwInput" placeholder="اكتب رسالة..." onkeypress="if(event.key==='Enter')sendCW()" aria-label="اكتب رسالتك">
+            <button onclick="sendCW()" aria-label="إرسال">📤</button>
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-label="تسجيل الدخول">
+    <div class="modal">
+        <button class="mx" onclick="closeModals()" aria-label="إغلاق">✕</button>
+        <div class="login-tabs" role="tablist">
+            <button class="lt active" data-lt="login" role="tab" aria-selected="true">🔐 تسجيل دخول</button>
+            <button class="lt" data-lt="register" role="tab">📝 إنشاء حساب</button>
+        </div>
+        <div class="lc active" id="lt-login" role="tabpanel">
+            <div class="login-icon">🎓</div>
+            <h3>تسجيل دخول الطالب</h3>
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="loginId">الرقم القومي أو البريد</label>
+                    <input type="text" id="loginId" required placeholder="أدخل الرقم القومي أو البريد" autocomplete="username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPass">كلمة المرور</label>
+                    <input type="password" id="loginPass" required placeholder="كلمة المرور" autocomplete="current-password">
+                    <small class="hint">💡 كلمة المرور الافتراضية: 123456</small>
+                </div>
+                <button type="submit" class="submit-btn">🔓 تسجيل الدخول</button>
+            </form>
+            <div class="test-hint" style="margin-top:15px">
+                <p>🧪 <strong>للاختبار:</strong> رقم: 29901011234567 | كلمة المرور: 123456</p>
+                <p>⚙️ <strong>أدمن:</strong> admin | admin123</p>
+            </div>
+        </div>
+        <div class="lc" id="lt-register" role="tabpanel">
+            <div class="login-icon">📝</div>
+            <h3>إنشاء حساب جديد</h3>
+            <form id="registerForm" novalidate>
+                <div class="form-group">
+                    <label for="regName">الاسم الكامل *</label>
+                    <input type="text" required placeholder="مثال: أحمد محمد العلي" id="regName" autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="regNid">الرقم القومي (14 رقم) *</label>
+                    <input type="text" required placeholder="أدخل 14 رقم" maxlength="14" id="regNid" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+                    <small class="hint">💡 رقم البطاقة الشخصية</small>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">البريد الإلكتروني *</label>
+                    <input type="email" required placeholder="example@email.com" id="regEmail" autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">رقم الهاتف *</label>
+                    <input type="tel" required placeholder="01XXXXXXXXX" id="regPhone" autocomplete="tel">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="regPass">كلمة المرور * (6+ أحرف)</label>
+                        <input type="password" required placeholder="كلمة المرور" minlength="6" id="regPass" autocomplete="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="regPass2">تأكيد كلمة المرور *</label>
+                        <input type="password" required placeholder="أعد كتابتها" id="regPass2" autocomplete="new-password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="regDept">القسم</label>
+                    <select id="regDept">
+                        <option value="">اختر</option>
+                        <option>التربية الرياضية</option>
+                        <option>التدريب الرياضي</option>
+                        <option>الإدارة الرياضية</option>
+                        <option>علوم الحركة والصحة</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">📝 إنشاء الحساب</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true">
+    <div class="modal success-m">
+        <div class="sm-icon">✅</div>
+        <h3 id="successTitle">تم بنجاح!</h3>
+        <p id="successMsg">تمت العملية بنجاح</p>
+        <button class="submit-btn" onclick="closeModals()">حسناً</button>
+    </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="modal-overlay" id="lightboxModal" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+    <div class="modal lightbox-m">
+        <button class="mx" onclick="closeModals()" aria-label="إغلاق">✕</button>
+        <div class="lb-img" id="lbImg"></div>
+        <div class="lb-info"><h4 id="lbTitle">-</h4><p id="lbDate">-</p></div>
+    </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="modal-overlay" id="adminModal" role="dialog" aria-modal="true" aria-label="لوحة التحكم">
+    <div class="modal admin-m">
+        <button class="mx" onclick="closeModals()" aria-label="إغلاق لوحة التحكم">✕</button>
+        <div class="admin-wrap">
+            <aside class="admin-side" role="navigation" aria-label="قائمة لوحة التحكم">
+                <div class="admin-logo"><span>🏛️</span><h4>لوحة التحكم</h4></div>
+                <button class="anav active" onclick="switchAdmin('dash',this)">📊 الرئيسية</button>
+                <button class="anav" onclick="switchAdmin('students',this)">👨‍🎓 الطلاب</button>
+                <button class="anav" onclick="switchAdmin('att',this)">📋 الحضور</button>
+                <button class="anav" onclick="switchAdmin('chat',this)">💬 الرسائل</button>
+                <button class="anav" onclick="switchAdmin('settings',this)">⚙️ الإعدادات</button>
+            </aside>
+            <main class="admin-main">
+                <!-- Dashboard -->
+                <div class="ap active" id="ap-dash">
+                    <h2>📊 لوحة المعلومات</h2>
+                    <div class="dash-cards">
+                        <div class="dc" style="border-right:4px solid #10b981"><span style="color:#10b981">👨‍🎓</span><div><strong>1,200</strong><small>طالب</small></div></div>
+                        <div class="dc" style="border-right:4px solid #3b82f6"><span style="color:#3b82f6">👨‍🏫</span><div><strong>85</strong><small>أستاذ</small></div></div>
+                        <div class="dc" style="border-right:4px solid #f59e0b"><span style="color:#f59e0b">📚</span><div><strong>48</strong><small>مقرر</small></div></div>
+                        <div class="dc" style="border-right:4px solid #ef4444"><span style="color:#ef4444">⚠️</span><div><strong>23</strong><small>إنذار</small></div></div>
+                    </div>
+                    <div class="activity-box">
+                        <h4>🕐 آخر الأنشطة</h4>
+                        <div class="act-item"><span class="act-i" style="background:rgba(16,185,129,.1)">✅</span><div><strong>تم رصد درجات التشريح</strong><small>منذ 5 دقائق</small></div></div>
+                        <div class="act-item"><span class="act-i" style="background:rgba(59,130,246,.1)">👨‍🎓</span><div><strong>تسجيل طالب جديد</strong><small>منذ 30 دقيقة</small></div></div>
+                        <div class="act-item"><span class="act-i" style="background:rgba(239,68,68,.1)">⚠️</span><div><strong>إنذار غياب</strong><small>منذ ساعة</small></div></div>
+                    </div>
+                </div>
+                <!-- Students -->
+                <div class="ap" id="ap-students">
+                    <h2>👨‍🎓 إدارة الطلاب</h2>
+                    <div class="toolbar">
+                        <input placeholder="🔍 بحث..." oninput="searchAdmin(this.value)" aria-label="بحث في الطلاب">
+                        <button class="tbtn" onclick="exportStudents()">📥 تصدير</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead><tr><th>الرقم القومي</th><th>الاسم</th><th>القسم</th><th>السنة</th><th lang="en">GPA</th><th>الحالة</th></tr></thead>
+                            <tbody id="adminBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Attendance -->
+                <div class="ap" id="ap-att">
+                    <h2>📋 كشف الحضور</h2>
+                    <div class="toolbar">
+                        <input type="date" value="2024-12-15" aria-label="التاريخ">
+                        <select aria-label="المادة"><option>تدريب رياضي متقدم</option><option>البحث العلمي</option><option>الإصابات الرياضية</option></select>
+                        <button class="tbtn" onclick="loadAtt()">📋 عرض</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead><tr><th>م</th><th>الاسم</th><th>حاضر</th><th>غائب</th><th>عذر</th></tr></thead>
+                            <tbody id="attBody"></tbody>
+                        </table>
+                    </div>
+                    <button class="tbtn" style="margin-top:15px" onclick="saveAttendance()">💾 حفظ</button>
+                </div>
+                <!-- Chat -->
+                <div class="ap" id="ap-chat">
+                    <h2>💬 الرسائل</h2>
+                    <div class="admin-chat">
+                        <div class="ach-list">
+                            <div class="ach-user active" onclick="selectChat(this,'أحمد')"><span>👨‍🎓</span><div><strong>أحمد محمد</strong><small>محتاج استفسار...</small></div></div>
+                            <div class="ach-user" onclick="selectChat(this,'سارة')"><span>👩‍🎓</span><div><strong>سارة خالد</strong><small>شكراً على المحاضرة</small></div></div>
+                            <div class="ach-user" onclick="selectChat(this,'عمر')"><span>👨‍🎓</span><div><strong>عمر حسن</strong><small>تأجيل الامتحان؟</small></div></div>
+                        </div>
+                        <div class="ach-main">
+                            <div class="ach-head"><span>👨‍🎓</span><strong id="achName">أحمد محمد</strong></div>
+                            <div class="ach-msgs" id="achMsgs" role="log" aria-live="polite">
+                                <div class="msg msg-r"><div class="msg-b"><p>السلام عليكم أستاذ، محتاج استفسار</p><small>10:30 ص</small></div></div>
+                                <div class="msg msg-s"><div class="msg-b"><p>أهلاً أحمد، تفضل</p><small>10:35 ص</small></div></div>
+                            </div>
+                            <div class="ach-input">
+                                <input id="achInput" placeholder="اكتب رد..." onkeypress="if(event.key==='Enter')sendAch()" aria-label="اكتب الرد">
+                                <button onclick="sendAch()" aria-label="إرسال">📤</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="calc-actions">
-                        <button class="btn-add-course" onclick="addCalcRow()">➕ إضافة مقرر</button>
-                        <button class="btn-calculate" onclick="calculateGPA()">🧮 حساب المعدل</button>
-                    </div>
-                    <div class="calc-result" id="calcResult" style="display:none;">
-                        <div class="calc-gpa" id="calcGpaResult">0.00</div>
-                        <div class="calc-grade" id="calcGradeResult">-</div>
+                </div>
+                <!-- Settings -->
+                <div class="ap" id="ap-settings">
+                    <h2>⚙️ الإعدادات</h2>
+                    <div class="settings-box">
+                        <div class="set-card">
+                            <h4>🏛️ معلومات الكلية</h4>
+                            <div class="form-group"><label>اسم الكلية</label><input value="كلية علوم الرياضة"></div>
+                            <div class="form-group"><label>البريد</label><input value="info@ssc.edu.sa" dir="ltr"></div>
+                            <button class="tbtn" onclick="showSuccess('تم الحفظ! ✅','تم حفظ إعدادات الكلية بنجاح')">💾 حفظ</button>
+                        </div>
+                        <div class="set-card">
+                            <h4>📧 البريد الجماعي</h4>
+                            <div class="form-group"><label>المرسل إليهم</label><select><option>جميع الطلاب</option><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option></select></div>
+                            <div class="form-group"><label>الموضوع</label><input placeholder="موضوع البريد"></div>
+                            <div class="form-group"><label>المحتوى</label><textarea placeholder="محتوى الرسالة..."></textarea></div>
+                            <button class="tbtn" onclick="showSuccess('تم الإرسال! 📧','تم إرسال البريد لـ 1,200 طالب بنجاح')">📧 إرسال</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== NEWS ===== -->
-    <section class="news section" id="news">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">📰 الأخبار</span>
-                <h2>أخبار الكلية</h2>
-            </div>
-            <div class="news-grid">
-                <div class="news-card news-featured fade-up">
-                    <div class="news-img" style="background: linear-gradient(135deg, #1e3a5f, #2d5f8a);"><span>🏆</span>
-                        <div class="news-date"><strong>15</strong><span>ديسمبر</span></div>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-cat">فعاليات</span>
-                        <h3>فوز فريق الكلية ببطولة الجامعات لألعاب القوى</h3>
-                        <p>حققت الكلية إنجازاً مميزاً بالمركز الأول في بطولة الجامعات السنوية...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-                <div class="news-card fade-up">
-                    <div class="news-img" style="background: linear-gradient(135deg, #b7410e, #d4652a);"><span>📢</span>
-                        <div class="news-date"><strong>12</strong><span>ديسمبر</span></div>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-cat">أكاديمي</span>
-                        <h3>فتح باب القبول للفصل الدراسي الثاني</h3>
-                        <p>تعلن الكلية عن فتح باب التسجيل والقبول للفصل الثاني...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-                <div class="news-card fade-up">
-                    <div class="news-img" style="background: linear-gradient(135deg, #1a5632, #2d8a4e);"><span>🔬</span>
-                        <div class="news-date"><strong>08</strong><span>ديسمبر</span></div>
-                    </div>
-                    <div class="news-content">
-                        <span class="news-cat">بحث علمي</span>
-                        <h3>مؤتمر دولي حول علوم الرياضة والصحة</h3>
-                        <p>تنظم الكلية المؤتمر الدولي الخامس بمشاركة 15 دولة...</p>
-                        <a href="#" class="read-more">اقرأ المزيد ←</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACT ===== -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <div class="section-title fade-up">
-                <span class="section-badge">📞 اتصل بنا</span>
-                <h2>تواصل معنا</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info fade-up">
-                    <div class="contact-card"><div class="c-icon">📍</div><div><h4>العنوان</h4><p>المدينة الجامعية، الرياض</p></div></div>
-                    <div class="contact-card"><div class="c-icon">📞</div><div><h4>الهاتف</h4><p dir="ltr">+966 11 234 5678</p></div></div>
-                    <div class="contact-card"><div class="c-icon">📧</div><div><h4>البريد</h4><p>info@ssc.edu.sa</p></div></div>
-                    <div class="contact-card"><div class="c-icon">⏰</div><div><h4>الدوام</h4><p>أحد-خميس: 8ص - 4م</p></div></div>
-                </div>
-                <form class="contact-form fade-up" id="contactForm">
-                    <h3>📩 أرسل رسالة</h3>
-                    <div class="form-row">
-                        <div class="form-group"><label>الاسم *</label><input type="text" required placeholder="اسمك الكامل"></div>
-                        <div class="form-group"><label>البريد *</label><input type="email" required placeholder="بريدك الإلكتروني"></div>
-                    </div>
-                    <div class="form-group"><label>الموضوع</label><input type="text" placeholder="موضوع الرسالة"></div>
-                    <div class="form-group"><label>الرسالة *</label><textarea required placeholder="اكتب رسالتك..."></textarea></div>
-                    <button type="submit" class="submit-btn">📨 إرسال</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo"><span>🏛️</span><div><strong>كلية علوم الرياضة</strong><small>Sport Science College</small></div></div>
-                    <p>نسعى لتحقيق الريادة في علوم الرياضة والتربية البدنية</p>
-                    <div class="footer-social"><a href="#">🐦</a><a href="#">📸</a><a href="#">📘</a><a href="#">▶️</a></div>
-                </div>
-                <div><h4>روابط سريعة</h4><ul><li><a href="#home">الرئيسية</a></li><li><a href="#about">عن الكلية</a></li><li><a href="#departments">الأقسام</a></li><li><a href="#student-portal">بوابة الطالب</a></li><li><a href="#contact">اتصل بنا</a></li></ul></div>
-                <div><h4>خدمات</h4><ul><li><a href="#student-portal">استعلام الرقم القومي</a></li><li><a href="#grades">نظام التقديرات</a></li><li><a href="#">النتائج</a></li><li><a href="#">الجدول الدراسي</a></li></ul></div>
-                <div><h4>الأقسام</h4><ul><li><a href="#">التربية الرياضية</a></li><li><a href="#">التدريب الرياضي</a></li><li><a href="#">الإدارة الرياضية</a></li><li><a href="#">علوم الحركة</a></li></ul></div>
-            </div>
-            <div class="footer-bottom"><p>© 2024 كلية علوم الرياضة 🏅 جميع الحقوق محفوظة</p></div>
-        </div>
-    </footer>
-
-    <!-- ===== SCROLL TOP ===== -->
-    <button class="scroll-top" id="scrollTop">⬆</button>
-
-    <!-- ===== LOGIN MODAL ===== -->
-    <div class="modal-overlay" id="loginModal">
-        <div class="modal login-modal">
-            <button class="modal-x" onclick="closeAllModals()">✕</button>
-            <div class="login-tabs">
-                <button class="login-tab active" data-ltab="login">🔐 تسجيل دخول</button>
-                <button class="login-tab" data-ltab="register">📝 إنشاء حساب</button>
-            </div>
-            <!-- Login Form -->
-            <div class="login-content active" id="ltab-login">
-                <div class="login-icon">🎓</div>
-                <h3>تسجيل دخول الطالب</h3>
-                <form onsubmit="handleLogin(event)">
-                    <div class="form-group"><label>الرقم القومي أو رقم الطالب</label><input type="text" id="loginId" required placeholder="أدخل الرقم القومي"></div>
-                    <div class="form-group"><label>كلمة المرور</label><input type="password" id="loginPass" required placeholder="أدخل كلمة المرور">
-                        <small class="form-hint">💡 كلمة المرور الافتراضية: 123456</small>
-                    </div>
-                    <div class="form-check"><input type="checkbox" id="rememberMe"><label for="rememberMe">تذكرني</label></div>
-                    <button type="submit" class="submit-btn">🔓 تسجيل الدخول</button>
-                </form>
-                <p class="forgot-link"><a href="#">نسيت كلمة المرور؟</a></p>
-            </div>
-            <!-- Register Form -->
-            <div class="login-content" id="ltab-register">
-                <div class="login-icon">📝</div>
-                <h3>إنشاء حساب جديد</h3>
-                <form onsubmit="handleRegister(event)">
-                    <div class="form-group"><label>الاسم الكامل *</label><input type="text" required placeholder="أدخل اسمك الكامل"></div>
-                    <div class="form-group"><label>الرقم القومي (14 رقم) *</label><input type="text" required placeholder="أدخل الرقم القومي" maxlength="14"></div>
-                    <div class="form-group"><label>البريد الإلكتروني *</label><input type="email" required placeholder="example@email.com"></div>
-                    <div class="form-group"><label>رقم الهاتف *</label><input type="tel" required placeholder="+966 5X XXX XXXX"></div>
-                    <div class="form-row">
-                        <div class="form-group"><label>كلمة المرور *</label><input type="password" required placeholder="كلمة المرور" minlength="6"></div>
-                        <div class="form-group"><label>تأكيد كلمة المرور *</label><input type="password" required placeholder="أعد كلمة المرور"></div>
-                    </div>
-                    <div class="form-group"><label>القسم المرغوب</label>
-                        <select><option value="">اختر القسم</option><option>التربية الرياضية</option><option>التدريب الرياضي</option><option>الإدارة الرياضية</option><option>علوم الحركة والصحة</option></select>
-                    </div>
-                    <button type="submit" class="submit-btn">📝 إنشاء الحساب</button>
-                </form>
-            </div>
+            </main>
         </div>
     </div>
+</div>
 
-    <!-- ===== SUCCESS MODAL ===== -->
-    <div class="modal-overlay" id="successModal">
-        <div class="modal success-modal">
-            <div class="modal-icon-big">✅</div>
-            <h3 id="successTitle">تم بنجاح!</h3>
-            <p id="successMsg">تمت العملية بنجاح</p>
-            <button class="submit-btn" onclick="closeAllModals()">حسناً</button>
-        </div>
-    </div>
+<!-- Toast Notification -->
+<div class="toast-container" id="toastContainer"></div>
 
-    <!-- ===== IMAGE LIGHTBOX ===== -->
-    <div class="modal-overlay" id="imageModal">
-        <div class="modal image-modal">
-            <button class="modal-x" onclick="closeAllModals()">✕</button>
-            <div class="lightbox-img" id="lightboxImg"></div>
-            <div class="lightbox-info">
-                <h4 id="lightboxTitle">-</h4>
-                <p id="lightboxDate">-</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== LOGGED IN USER BAR ===== -->
-    <div class="user-bar" id="userBar" style="display:none;">
-        <div class="container">
-            <div class="user-bar-content">
-                <span>👋 مرحباً، <strong id="userBarName">الطالب</strong></span>
-                <div class="user-bar-actions">
-                    <a href="#student-portal">📋 بياناتي</a>
-                    <a href="#grades">📊 درجاتي</a>
-                    <button onclick="logoutUser()">🚪 خروج</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
