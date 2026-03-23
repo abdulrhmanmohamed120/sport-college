@@ -6,15 +6,13 @@
     <title>كلية علوم الرياضة | Sport Science College</title>
     <meta name="description" content="كلية علوم الرياضة - بوابة الطالب والخدمات الأكاديمية">
     <meta name="theme-color" content="#1e3a5f">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="style.css">
     <noscript><style>.loading-screen{display:none!important}</style></noscript>
 </head>
 <body>
 
 <!-- LOADING -->
-<div class="loading-screen" id="loadingScreen" role="status" aria-label="جاري التحميل">
+<div class="loading-screen" id="loadingScreen">
     <div class="loader">
         <div class="loader-ring"></div>
         <p>🏅 كلية علوم الرياضة</p>
@@ -22,7 +20,7 @@
 </div>
 
 <!-- NEWS TICKER -->
-<div class="news-ticker" role="marquee" aria-label="آخر الأخبار">
+<div class="news-ticker">
     <div class="ticker-label">📢 عاجل</div>
     <div class="ticker-wrap">
         <div class="ticker-content" id="tickerContent">
@@ -38,9 +36,9 @@
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar" id="navbar" role="navigation" aria-label="القائمة الرئيسية">
+<nav class="navbar" id="navbar">
     <div class="container">
-        <a href="#home" class="logo" aria-label="الصفحة الرئيسية - كلية علوم الرياضة">
+        <a href="#home" class="logo">
             <span class="logo-icon">🏛️</span>
             <div class="logo-text">
                 <strong>كلية علوم الرياضة</strong>
@@ -59,30 +57,27 @@
         </ul>
         <div class="nav-actions">
             <div style="position:relative">
-                <button class="notif-btn" onclick="showNotifications()" aria-label="الإشعارات" title="الإشعارات">
-                    🔔<span class="notif-badge" id="notifBadge">3</span>
-                </button>
-                <div class="notif-panel" id="notifPanel" role="dialog" aria-label="قائمة الإشعارات"></div>
+                <button class="notif-btn" onclick="showNotifications()" aria-label="الإشعارات">🔔<span class="notif-badge" id="notifBadge">3</span></button>
+                <div class="notif-panel" id="notifPanel"></div>
             </div>
-            <button class="nav-btn" onclick="openLoginModal()" aria-label="تسجيل الدخول" title="تسجيل الدخول">🔐 دخول</button>
-            <button class="nav-btn admin-btn" onclick="openAdminPanel()" aria-label="لوحة التحكم" title="لوحة التحكم">⚙️</button>
-            <button class="dark-toggle" id="darkToggle" aria-label="تبديل الوضع الليلي" title="الوضع الليلي">🌙</button>
-            <div class="mobile-toggle" id="mobileToggle" role="button" tabindex="0" aria-label="فتح القائمة" aria-expanded="false">
-                <span></span><span></span><span></span>
-            </div>
+            <button class="nav-btn" onclick="openLoginModal()">🔐 دخول</button>
+            <button class="nav-btn admin-btn" onclick="openAdminPanel()">⚙️</button>
+            <button class="dark-toggle" id="darkToggle" aria-label="الوضع الليلي">🌙</button>
+            <div class="mobile-toggle" id="mobileToggle"><span></span><span></span><span></span></div>
         </div>
     </div>
 </nav>
 
 <!-- USER BAR -->
-<div class="user-bar" id="userBar" style="display:none" role="banner">
+<div class="user-bar" id="userBar" style="display:none">
     <div class="container">
         <div class="user-bar-content">
             <span>👋 مرحباً، <strong id="userBarName">الطالب</strong></span>
             <div class="user-bar-actions">
                 <a href="#student-portal">📋 بياناتي</a>
                 <a href="#grades">📊 درجاتي</a>
-                <button onclick="logoutUser()" aria-label="تسجيل الخروج">🚪 خروج</button>
+                <button onclick="openEditProfile()">✏️ تعديل بياناتي</button>
+                <button onclick="logoutUser()">🚪 خروج</button>
             </div>
         </div>
     </div>
@@ -90,23 +85,17 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
-    <div class="hero-bg" aria-hidden="true">
-        <span class="float-icon" style="top:10%;left:10%">⚽</span>
-        <span class="float-icon" style="top:20%;right:15%">🏀</span>
-        <span class="float-icon" style="bottom:30%;left:20%">🏊</span>
-        <span class="float-icon" style="bottom:20%;right:10%">🏃</span>
-        <span class="float-icon" style="top:50%;left:5%">🏋️</span>
-        <span class="float-icon" style="top:40%;right:5%">🤾</span>
-    </div>
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-container">
         <div class="hero-badge">🏆 معتمدة من وزارة التعليم العالي</div>
         <h1>كلية <span class="highlight">علوم الرياضة</span></h1>
         <p class="hero-sub">نصنع قادة الرياضة وأبطال المستقبل من خلال التعليم الأكاديمي المتميز</p>
-        <div class="hero-stats" role="list" aria-label="إحصائيات الكلية">
-            <div class="h-stat" role="listitem"><span class="h-num" data-target="5000">0</span><small>خريج</small></div>
-            <div class="h-stat" role="listitem"><span class="h-num" data-target="1200">0</span><small>طالب</small></div>
-            <div class="h-stat" role="listitem"><span class="h-num" data-target="85">0</span><small>أستاذ</small></div>
-            <div class="h-stat" role="listitem"><span class="h-num" data-target="25">0</span><small>سنة</small></div>
+        <div class="hero-stats">
+            <div class="h-stat"><span class="h-num" data-target="5000">0</span><small>خريج</small></div>
+            <div class="h-stat"><span class="h-num" data-target="1200">0</span><small>طالب</small></div>
+            <div class="h-stat"><span class="h-num" data-target="85">0</span><small>أستاذ</small></div>
+            <div class="h-stat"><span class="h-num" data-target="25">0</span><small>سنة</small></div>
         </div>
         <div class="hero-btns">
             <button class="btn btn-gold" onclick="openLoginModal()">🔐 بوابة الطالب</button>
@@ -114,11 +103,7 @@
             <a href="#about" class="btn btn-ghost">🎯 اكتشف الكلية</a>
         </div>
     </div>
-    <div class="hero-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
-        </svg>
-    </div>
+    <div class="hero-wave"><svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="currentColor"/></svg></div>
 </section>
 
 <!-- GALLERY -->
@@ -128,94 +113,62 @@
             <span class="badge">📸 معرض الصور</span>
             <h2>لحظات رياضية مميزة</h2>
         </div>
-        <div class="gallery-filters fade-up" role="tablist" aria-label="فلترة الصور">
-            <button class="gf active" data-f="all" role="tab" aria-selected="true">الكل</button>
-            <button class="gf" data-f="football" role="tab">كرة القدم</button>
-            <button class="gf" data-f="basketball" role="tab">كرة السلة</button>
-            <button class="gf" data-f="swimming" role="tab">السباحة</button>
-            <button class="gf" data-f="athletics" role="tab">ألعاب القوى</button>
-            <button class="gf" data-f="gym" role="tab">اللياقة</button>
+        <div class="gallery-filters fade-up">
+            <button class="gf active" data-f="all">الكل</button>
+            <button class="gf" data-f="football">كرة القدم</button>
+            <button class="gf" data-f="basketball">كرة السلة</button>
+            <button class="gf" data-f="swimming">السباحة</button>
+            <button class="gf" data-f="athletics">ألعاب القوى</button>
+            <button class="gf" data-f="gym">اللياقة</button>
         </div>
         <div class="gallery-grid" id="galleryGrid">
             <div class="g-item" data-cat="football" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)"><span>⚽</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=500&h=350&fit=crop" alt="نهائي بطولة الجامعات" loading="lazy">
                     <div class="g-over"><h4>نهائي بطولة الجامعات</h4><p>📅 ديسمبر 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>124</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 23</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>124</span></button><button onclick="event.stopPropagation()">💬 23</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="basketball" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#b7410e,#d4652a)"><span>🏀</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=350&fit=crop" alt="تدريبات كرة السلة" loading="lazy">
                     <div class="g-over"><h4>تدريبات كرة السلة</h4><p>📅 نوفمبر 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>89</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 15</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>89</span></button><button onclick="event.stopPropagation()">💬 15</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="swimming" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)"><span>🏊</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=500&h=350&fit=crop" alt="بطولة السباحة" loading="lazy">
                     <div class="g-over"><h4>بطولة السباحة</h4><p>📅 أكتوبر 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>156</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 31</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>156</span></button><button onclick="event.stopPropagation()">💬 31</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="athletics" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#4a1a6b,#7b3fa0)"><span>🏃</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1532444458054-01a7dd3e9fca?w=500&h=350&fit=crop" alt="سباق 100 متر" loading="lazy">
                     <div class="g-over"><h4>سباق 100 متر</h4><p>📅 سبتمبر 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>203</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 45</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>203</span></button><button onclick="event.stopPropagation()">💬 45</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="gym" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#c0392b,#e74c3c)"><span>🏋️</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&h=350&fit=crop" alt="صالة اللياقة الجديدة" loading="lazy">
                     <div class="g-over"><h4>صالة اللياقة الجديدة</h4><p>📅 أغسطس 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>78</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 12</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>78</span></button><button onclick="event.stopPropagation()">💬 12</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="football" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#16a085,#1abc9c)"><span>🤾</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?w=500&h=350&fit=crop" alt="تدريبات كرة اليد" loading="lazy">
                     <div class="g-over"><h4>تدريبات كرة اليد</h4><p>📅 يوليو 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>95</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 18</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>95</span></button><button onclick="event.stopPropagation()">💬 18</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="swimming" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#2980b9,#3498db)"><span>🏄</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=500&h=350&fit=crop" alt="حصة سباحة عملية" loading="lazy">
                     <div class="g-over"><h4>حصة سباحة عملية</h4><p>📅 يونيو 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>67</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 9</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>67</span></button><button onclick="event.stopPropagation()">💬 9</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
             <div class="g-item" data-cat="athletics" onclick="openLightbox(this)">
-                <div class="g-img" style="background:linear-gradient(135deg,#e67e22,#f39c12)"><span>🏅</span>
+                <div class="g-img"><img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=500&h=350&fit=crop" alt="تتويج أبطال الكلية" loading="lazy">
                     <div class="g-over"><h4>تتويج أبطال الكلية</h4><p>📅 مايو 2024</p></div>
                 </div>
-                <div class="g-actions">
-                    <button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>312</span></button>
-                    <button onclick="event.stopPropagation()" aria-label="تعليقات">💬 56</button>
-                    <button onclick="event.stopPropagation()" aria-label="مشاركة">📤</button>
-                </div>
+                <div class="g-actions"><button onclick="event.stopPropagation();likePhoto(this)" aria-label="إعجاب">❤️ <span>312</span></button><button onclick="event.stopPropagation()">💬 56</button><button onclick="event.stopPropagation()">📤</button></div>
             </div>
         </div>
     </div>
@@ -224,25 +177,21 @@
 <!-- ABOUT -->
 <section class="section about" id="about">
     <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">🏛️ عن الكلية</span>
-            <h2>كلية علوم الرياضة</h2>
-        </div>
+        <div class="section-title fade-up"><span class="badge">🏛️ عن الكلية</span><h2>كلية علوم الرياضة</h2></div>
         <div class="about-grid">
             <div class="about-img fade-up">
-                <div class="about-box">🏟️</div>
+                <div class="about-box">
+                    <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=600&h=400&fit=crop" alt="ملعب الكلية">
+                </div>
                 <div class="about-bdg"><strong>+25</strong><span>سنة تميز</span></div>
             </div>
             <div class="about-text fade-up">
                 <h3>بناء جيل <span class="gold">رياضي متميز</span></h3>
                 <p>تأسست كلية علوم الرياضة بهدف إعداد كوادر متخصصة في التربية الرياضية والتدريب الرياضي والإدارة الرياضية وعلوم الحركة.</p>
                 <div class="about-feats">
-                    <div>✅ فريق أكاديمي متميز</div>
-                    <div>✅ مرافق رياضية حديثة</div>
-                    <div>✅ اعتماد أكاديمي دولي</div>
-                    <div>✅ تدريب ميداني عملي</div>
-                    <div>✅ بحث علمي متقدم</div>
-                    <div>✅ شراكات دولية</div>
+                    <div>✅ فريق أكاديمي متميز</div><div>✅ مرافق رياضية حديثة</div>
+                    <div>✅ اعتماد أكاديمي دولي</div><div>✅ تدريب ميداني عملي</div>
+                    <div>✅ بحث علمي متقدم</div><div>✅ شراكات دولية</div>
                 </div>
             </div>
         </div>
@@ -252,25 +201,22 @@
 <!-- DEPARTMENTS -->
 <section class="section depts" id="departments">
     <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">🏫 الأقسام</span>
-            <h2>أقسام الكلية</h2>
-        </div>
+        <div class="section-title fade-up"><span class="badge">🏫 الأقسام</span><h2>أقسام الكلية</h2></div>
         <div class="dept-grid">
             <div class="dept-card fade-up">
-                <div class="dept-h" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)"><span>⚽</span><div>01</div></div>
+                <div class="dept-h-img"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&h=250&fit=crop" alt="التربية الرياضية"><div class="dept-h-overlay"><span>⚽</span><div>01</div></div></div>
                 <div class="dept-b"><h3>التربية الرياضية</h3><p>إعداد معلمي التربية الرياضية المؤهلين</p><div class="dept-tags"><span>🎓 350 طالب</span><span>👨‍🏫 22 أستاذ</span></div></div>
             </div>
             <div class="dept-card fade-up">
-                <div class="dept-h" style="background:linear-gradient(135deg,#b7410e,#d4652a)"><span>🏋️</span><div>02</div></div>
+                <div class="dept-h-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=250&fit=crop" alt="التدريب الرياضي"><div class="dept-h-overlay"><span>🏋️</span><div>02</div></div></div>
                 <div class="dept-b"><h3>التدريب الرياضي</h3><p>تأهيل مدربين رياضيين متخصصين</p><div class="dept-tags"><span>🎓 280 طالب</span><span>👨‍🏫 20 أستاذ</span></div></div>
             </div>
             <div class="dept-card fade-up">
-                <div class="dept-h" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)"><span>📋</span><div>03</div></div>
+                <div class="dept-h-img"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=250&fit=crop" alt="الإدارة الرياضية"><div class="dept-h-overlay"><span>📋</span><div>03</div></div></div>
                 <div class="dept-b"><h3>الإدارة الرياضية</h3><p>إدارة المؤسسات والأندية الرياضية</p><div class="dept-tags"><span>🎓 300 طالب</span><span>👨‍🏫 18 أستاذ</span></div></div>
             </div>
             <div class="dept-card fade-up">
-                <div class="dept-h" style="background:linear-gradient(135deg,#4a1a6b,#7b3fa0)"><span>🔬</span><div>04</div></div>
+                <div class="dept-h-img"><img src="https://images.unsplash.com/photo-1576678927484-cc907957088c?w=600&h=250&fit=crop" alt="علوم الحركة"><div class="dept-h-overlay"><span>🔬</span><div>04</div></div></div>
                 <div class="dept-b"><h3>علوم الحركة والصحة</h3><p>دراسة الحركة البشرية والتأهيل الرياضي</p><div class="dept-tags"><span>🎓 270 طالب</span><span>👨‍🏫 25 أستاذ</span></div></div>
             </div>
         </div>
@@ -290,8 +236,8 @@
                 <div class="search-icon">🆔</div>
                 <h3>البحث بالرقم القومي</h3>
                 <div class="search-row">
-                    <input type="text" id="nidInput" placeholder="أدخل الرقم القومي (14 رقم)" maxlength="14" inputmode="numeric" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'')" aria-label="الرقم القومي">
-                    <button onclick="searchStudent()" class="search-btn" aria-label="بحث">🔍 بحث</button>
+                    <input type="text" id="nidInput" placeholder="أدخل الرقم القومي (14 رقم)" maxlength="14" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+                    <button onclick="searchStudent()" class="search-btn">🔍 بحث</button>
                 </div>
                 <div class="test-hint">
                     <p>🧪 <strong>أرقام تجريبية:</strong></p>
@@ -306,9 +252,12 @@
         </div>
 
         <!-- STUDENT RESULT -->
-        <div class="student-result" id="studentResult" style="display:none" role="region" aria-label="نتيجة البحث">
+        <div class="student-result" id="studentResult" style="display:none">
             <div class="result-head">
-                <div class="s-avatar" id="sAvatar">👨‍🎓</div>
+                <div class="s-avatar-wrap">
+                    <img class="s-avatar-img" id="sAvatarImg" src="" alt="صورة الطالب">
+                    <div class="s-avatar-fallback" id="sAvatarFallback">👨‍🎓</div>
+                </div>
                 <div class="s-info">
                     <h3 id="sName">-</h3>
                     <span class="s-id" id="sIdDisplay">-</span>
@@ -318,32 +267,21 @@
                         <span class="tag tag-s" id="sStatus">-</span>
                     </div>
                 </div>
-                <button class="close-btn" onclick="closeResult()" aria-label="إغلاق">✕</button>
-                <button class="print-btn" onclick="printReport()" aria-label="طباعة التقرير" title="طباعة">🖨️</button>
+                <button class="close-btn" onclick="closeResult()">✕</button>
+                <button class="print-btn" onclick="printReport()">🖨️</button>
+                <button class="edit-profile-btn" id="editProfileBtn" onclick="openEditProfile()" style="display:none">✏️</button>
             </div>
-            <div class="result-tabs" id="resultTabs" role="tablist">
-                <button class="rtab active" data-rt="info" role="tab" aria-selected="true">📋 البيانات</button>
-                <button class="rtab" data-rt="grades" role="tab">📊 الدرجات</button>
-                <button class="rtab" data-rt="monthly" role="tab">📅 التقييم الشهري</button>
-                <button class="rtab" data-rt="schedule" role="tab">🗓️ الجدول</button>
-                <button class="rtab" data-rt="attendance" role="tab">📋 الحضور</button>
+            <div class="result-tabs">
+                <button class="rtab active" data-rt="info">📋 البيانات</button>
+                <button class="rtab" data-rt="grades">📊 الدرجات</button>
+                <button class="rtab" data-rt="monthly">📅 التقييم الشهري</button>
+                <button class="rtab" data-rt="schedule">🗓️ الجدول</button>
+                <button class="rtab" data-rt="attendance">📋 الحضور</button>
             </div>
-
-            <div class="rcontent active" id="rt-info" role="tabpanel">
-                <div class="info-grid" id="infoGrid"></div>
-            </div>
-            <div class="rcontent" id="rt-grades" role="tabpanel">
+            <div class="rcontent active" id="rt-info"><div class="info-grid" id="infoGrid"></div></div>
+            <div class="rcontent" id="rt-grades">
                 <div class="gpa-summary">
-                    <div class="gpa-circle">
-                        <svg viewBox="0 0 100 100" aria-hidden="true">
-                            <circle cx="50" cy="50" r="45" class="gpa-bg"/>
-                            <circle cx="50" cy="50" r="45" class="gpa-fill" id="gpaFill"/>
-                        </svg>
-                        <div class="gpa-txt">
-                            <span id="gpaVal">0.00</span>
-                            <small lang="en">GPA</small>
-                        </div>
-                    </div>
+                    <div class="gpa-circle"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" class="gpa-bg"/><circle cx="50" cy="50" r="45" class="gpa-fill" id="gpaFill"/></svg><div class="gpa-txt"><span id="gpaVal">0.00</span><small>GPA</small></div></div>
                     <div class="gpa-cards">
                         <div class="gc"><span id="gcDone">0</span><small>ساعة مكتملة</small></div>
                         <div class="gc"><span id="gcLeft">0</span><small>ساعة متبقية</small></div>
@@ -351,31 +289,17 @@
                         <div class="gc"><span id="gcRank">-</span><small>الترتيب</small></div>
                     </div>
                 </div>
-                <div class="table-responsive">
-                    <table class="data-table">
-                        <thead><tr><th>المقرر</th><th>الرمز</th><th>ساعات</th><th>أعمال سنة</th><th>نهائي</th><th>المجموع</th><th>التقدير</th></tr></thead>
-                        <tbody id="gradesBody"></tbody>
-                    </table>
-                </div>
+                <div class="table-responsive"><table class="data-table"><thead><tr><th>المقرر</th><th>الرمز</th><th>ساعات</th><th>أعمال سنة</th><th>نهائي</th><th>المجموع</th><th>التقدير</th></tr></thead><tbody id="gradesBody"></tbody></table></div>
             </div>
-            <div class="rcontent" id="rt-monthly" role="tabpanel">
-                <h4>📅 التقييم الشهري</h4>
-                <div class="month-grid" id="monthGrid"></div>
-                <h4>📈 مخطط الأداء</h4>
-                <div class="chart-box" id="chartBox"></div>
+            <div class="rcontent" id="rt-monthly">
+                <h4>📅 التقييم الشهري</h4><div class="month-grid" id="monthGrid"></div>
+                <h4>📈 مخطط الأداء</h4><div class="chart-box" id="chartBox"></div>
             </div>
-            <div class="rcontent" id="rt-schedule" role="tabpanel">
+            <div class="rcontent" id="rt-schedule">
                 <h4>🗓️ الجدول الدراسي</h4>
-                <div class="table-responsive">
-                    <table class="data-table schedule-tbl">
-                        <thead><tr><th>اليوم</th><th>8-10</th><th>10-12</th><th>12-2</th><th>2-4</th></tr></thead>
-                        <tbody id="schedBody"></tbody>
-                    </table>
-                </div>
+                <div class="table-responsive"><table class="data-table schedule-tbl"><thead><tr><th>اليوم</th><th>8-10</th><th>10-12</th><th>12-2</th><th>2-4</th></tr></thead><tbody id="schedBody"></tbody></table></div>
             </div>
-            <div class="rcontent" id="rt-attendance" role="tabpanel">
-                <div id="attContent"></div>
-            </div>
+            <div class="rcontent" id="rt-attendance"><div id="attContent"></div></div>
         </div>
     </div>
 </section>
@@ -383,10 +307,7 @@
 <!-- GRADES SYSTEM -->
 <section class="section grades-sys" id="grades">
     <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">📊 التقديرات</span>
-            <h2>نظام الدرجات والتقديرات</h2>
-        </div>
+        <div class="section-title fade-up"><span class="badge">📊 التقديرات</span><h2>نظام الدرجات والتقديرات</h2></div>
         <div class="grades-grid fade-up">
             <div class="grade-card">
                 <h3>📋 مقياس التقديرات</h3>
@@ -394,15 +315,15 @@
                     <table class="data-table scale-tbl">
                         <thead><tr><th>الدرجة</th><th>التقدير</th><th>الرمز</th><th>النقاط</th></tr></thead>
                         <tbody>
-                            <tr class="gr-a"><td>95-100</td><td>ممتاز مرتفع</td><td lang="en">A+</td><td>4.00</td></tr>
-                            <tr class="gr-a"><td>90-94</td><td>ممتاز</td><td lang="en">A</td><td>3.75</td></tr>
-                            <tr class="gr-b"><td>85-89</td><td>جيد جداً+</td><td lang="en">B+</td><td>3.50</td></tr>
-                            <tr class="gr-b"><td>80-84</td><td>جيد جداً</td><td lang="en">B</td><td>3.00</td></tr>
-                            <tr class="gr-c"><td>75-79</td><td>جيد+</td><td lang="en">C+</td><td>2.50</td></tr>
-                            <tr class="gr-c"><td>70-74</td><td>جيد</td><td lang="en">C</td><td>2.00</td></tr>
-                            <tr class="gr-d"><td>65-69</td><td>مقبول+</td><td lang="en">D+</td><td>1.50</td></tr>
-                            <tr class="gr-d"><td>60-64</td><td>مقبول</td><td lang="en">D</td><td>1.00</td></tr>
-                            <tr class="gr-f"><td>أقل من 60</td><td>راسب</td><td lang="en">F</td><td>0.00</td></tr>
+                            <tr class="gr-a"><td>95-100</td><td>ممتاز مرتفع</td><td>A+</td><td>4.00</td></tr>
+                            <tr class="gr-a"><td>90-94</td><td>ممتاز</td><td>A</td><td>3.75</td></tr>
+                            <tr class="gr-b"><td>85-89</td><td>جيد جداً+</td><td>B+</td><td>3.50</td></tr>
+                            <tr class="gr-b"><td>80-84</td><td>جيد جداً</td><td>B</td><td>3.00</td></tr>
+                            <tr class="gr-c"><td>75-79</td><td>جيد+</td><td>C+</td><td>2.50</td></tr>
+                            <tr class="gr-c"><td>70-74</td><td>جيد</td><td>C</td><td>2.00</td></tr>
+                            <tr class="gr-d"><td>65-69</td><td>مقبول+</td><td>D+</td><td>1.50</td></tr>
+                            <tr class="gr-d"><td>60-64</td><td>مقبول</td><td>D</td><td>1.00</td></tr>
+                            <tr class="gr-f"><td>أقل من 60</td><td>راسب</td><td>F</td><td>0.00</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -411,20 +332,13 @@
                 <h3>🧮 حاسبة المعدل</h3>
                 <div id="calcRows">
                     <div class="calc-row">
-                        <input placeholder="المقرر" aria-label="اسم المقرر">
-                        <select class="calc-hrs" aria-label="عدد الساعات"><option>3</option><option>2</option><option>4</option><option>1</option></select>
-                        <select class="calc-gr" aria-label="التقدير"><option value="4.00">A+</option><option value="3.75">A</option><option value="3.50">B+</option><option value="3.00">B</option><option value="2.50">C+</option><option value="2.00">C</option><option value="1.50">D+</option><option value="1.00">D</option><option value="0.00">F</option></select>
-                        <button class="del-row" onclick="this.parentElement.remove()" aria-label="حذف">✕</button>
+                        <input placeholder="المقرر"><select class="calc-hrs"><option>3</option><option>2</option><option>4</option><option>1</option></select>
+                        <select class="calc-gr"><option value="4.00">A+</option><option value="3.75">A</option><option value="3.50">B+</option><option value="3.00">B</option><option value="2.50">C+</option><option value="2.00">C</option><option value="1.50">D+</option><option value="1.00">D</option><option value="0.00">F</option></select>
+                        <button class="del-row" onclick="this.parentElement.remove()">✕</button>
                     </div>
                 </div>
-                <div class="calc-btns">
-                    <button onclick="addCalcRow()">➕ إضافة مقرر</button>
-                    <button onclick="calcGPA()">🧮 حساب المعدل</button>
-                </div>
-                <div class="calc-res" id="calcRes" style="display:none">
-                    <div class="calc-gpa" id="calcGpa">0.00</div>
-                    <div id="calcGrade">-</div>
-                </div>
+                <div class="calc-btns"><button onclick="addCalcRow()">➕ إضافة مقرر</button><button onclick="calcGPA()">🧮 حساب المعدل</button></div>
+                <div class="calc-res" id="calcRes" style="display:none"><div class="calc-gpa" id="calcGpa">0.00</div><div id="calcGrade">-</div></div>
             </div>
         </div>
     </div>
@@ -433,46 +347,19 @@
 <!-- NEWS -->
 <section class="section" id="news">
     <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">📰 الأخبار</span>
-            <h2>أخبار الكلية</h2>
-        </div>
+        <div class="section-title fade-up"><span class="badge">📰 الأخبار</span><h2>أخبار الكلية</h2></div>
         <div class="news-grid">
             <article class="news-card nf fade-up">
-                <div class="news-img" style="background:linear-gradient(135deg,#1e3a5f,#2d5f8a)">
-                    <span>🏆</span>
-                    <div class="news-date"><strong>15</strong><span>ديسمبر</span></div>
-                </div>
-                <div class="news-body">
-                    <span class="news-cat">فعاليات</span>
-                    <h3>فوز فريق الكلية ببطولة الجامعات لألعاب القوى</h3>
-                    <p>حققت الكلية إنجازاً مميزاً بالمركز الأول في بطولة الجامعات السنوية...</p>
-                    <a href="#" class="read-more">اقرأ المزيد ←</a>
-                </div>
+                <div class="news-img"><img src="https://images.unsplash.com/photo-1461896836934-bd45ba8fcf9b?w=600&h=350&fit=crop" alt="بطولة ألعاب القوى" loading="lazy"><div class="news-date"><strong>15</strong><span>ديسمبر</span></div></div>
+                <div class="news-body"><span class="news-cat">فعاليات</span><h3>فوز فريق الكلية ببطولة الجامعات لألعاب القوى</h3><p>حققت الكلية إنجازاً مميزاً بالمركز الأول في بطولة الجامعات السنوية...</p><a href="#" class="read-more">اقرأ المزيد ←</a></div>
             </article>
             <article class="news-card fade-up">
-                <div class="news-img" style="background:linear-gradient(135deg,#b7410e,#d4652a)">
-                    <span>📢</span>
-                    <div class="news-date"><strong>12</strong><span>ديسمبر</span></div>
-                </div>
-                <div class="news-body">
-                    <span class="news-cat">أكاديمي</span>
-                    <h3>فتح باب القبول للفصل الدراسي الثاني</h3>
-                    <p>تعلن الكلية عن فتح باب التسجيل والقبول...</p>
-                    <a href="#" class="read-more">اقرأ المزيد ←</a>
-                </div>
+                <div class="news-img"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=250&fit=crop" alt="القبول الجديد" loading="lazy"><div class="news-date"><strong>12</strong><span>ديسمبر</span></div></div>
+                <div class="news-body"><span class="news-cat">أكاديمي</span><h3>فتح باب القبول للفصل الدراسي الثاني</h3><p>تعلن الكلية عن فتح باب التسجيل والقبول...</p><a href="#" class="read-more">اقرأ المزيد ←</a></div>
             </article>
             <article class="news-card fade-up">
-                <div class="news-img" style="background:linear-gradient(135deg,#1a5632,#2d8a4e)">
-                    <span>🔬</span>
-                    <div class="news-date"><strong>08</strong><span>ديسمبر</span></div>
-                </div>
-                <div class="news-body">
-                    <span class="news-cat">بحث علمي</span>
-                    <h3>مؤتمر دولي حول علوم الرياضة والصحة</h3>
-                    <p>تنظم الكلية المؤتمر الدولي الخامس بمشاركة 15 دولة...</p>
-                    <a href="#" class="read-more">اقرأ المزيد ←</a>
-                </div>
+                <div class="news-img"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=250&fit=crop" alt="المؤتمر الدولي" loading="lazy"><div class="news-date"><strong>08</strong><span>ديسمبر</span></div></div>
+                <div class="news-body"><span class="news-cat">بحث علمي</span><h3>مؤتمر دولي حول علوم الرياضة والصحة</h3><p>تنظم الكلية المؤتمر الدولي الخامس بمشاركة 15 دولة...</p><a href="#" class="read-more">اقرأ المزيد ←</a></div>
             </article>
         </div>
     </div>
@@ -481,37 +368,25 @@
 <!-- CONTACT -->
 <section class="section contact" id="contact">
     <div class="container">
-        <div class="section-title fade-up">
-            <span class="badge">📞 اتصل بنا</span>
-            <h2>تواصل معنا</h2>
-        </div>
+        <div class="section-title fade-up"><span class="badge">📞 اتصل بنا</span><h2>تواصل معنا</h2></div>
         <div class="contact-grid">
             <div class="contact-info fade-up">
                 <div class="c-card"><div class="c-icon">📍</div><div><h4>العنوان</h4><p>المدينة الجامعية، الرياض</p></div></div>
-                <div class="c-card"><div class="c-icon">📞</div><div><h4>الهاتف</h4><p dir="ltr" lang="en">+966 11 234 5678</p></div></div>
-                <div class="c-card"><div class="c-icon">📧</div><div><h4>البريد</h4><p dir="ltr" lang="en">info@ssc.edu.sa</p></div></div>
+                <div class="c-card"><div class="c-icon">📞</div><div><h4>الهاتف</h4><p dir="ltr">+966 11 234 5678</p></div></div>
+                <div class="c-card"><div class="c-icon">📧</div><div><h4>البريد</h4><p dir="ltr">info@ssc.edu.sa</p></div></div>
                 <div class="c-card"><div class="c-icon">⏰</div><div><h4>الدوام</h4><p>أحد-خميس: 8ص-4م</p></div></div>
+                <div class="c-card map-card">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=500&h=200&fit=crop" alt="موقع الكلية" style="width:100%;border-radius:8px">
+                </div>
             </div>
-            <form class="contact-form fade-up" id="contactForm" novalidate>
+            <form class="contact-form fade-up" id="contactForm">
                 <h3>📩 أرسل رسالة</h3>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="contactName">الاسم *</label>
-                        <input id="contactName" required placeholder="اسمك الكامل">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">البريد *</label>
-                        <input id="contactEmail" type="email" required placeholder="بريدك الإلكتروني">
-                    </div>
+                    <div class="form-group"><label for="contactName">الاسم *</label><input id="contactName" required placeholder="اسمك الكامل"></div>
+                    <div class="form-group"><label for="contactEmail">البريد *</label><input id="contactEmail" type="email" required placeholder="بريدك الإلكتروني"></div>
                 </div>
-                <div class="form-group">
-                    <label for="contactSubject">الموضوع</label>
-                    <input id="contactSubject" placeholder="موضوع الرسالة">
-                </div>
-                <div class="form-group">
-                    <label for="contactMsg">الرسالة *</label>
-                    <textarea id="contactMsg" required placeholder="اكتب رسالتك..."></textarea>
-                </div>
+                <div class="form-group"><label for="contactSubject">الموضوع</label><input id="contactSubject" placeholder="موضوع الرسالة"></div>
+                <div class="form-group"><label for="contactMsg">الرسالة *</label><textarea id="contactMsg" required placeholder="اكتب رسالتك..."></textarea></div>
                 <button type="submit" class="submit-btn">📨 إرسال</button>
             </form>
         </div>
@@ -522,175 +397,188 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
-            <div>
-                <div class="f-logo">
-                    <span>🏛️</span>
-                    <div><strong>كلية علوم الرياضة</strong><small lang="en">Sport Science College</small></div>
-                </div>
-                <p>نسعى لتحقيق الريادة في علوم الرياضة والتربية البدنية</p>
-                <div class="f-social">
-                    <a href="#" aria-label="تويتر">🐦</a>
-                    <a href="#" aria-label="انستغرام">📸</a>
-                    <a href="#" aria-label="فيسبوك">📘</a>
-                    <a href="#" aria-label="يوتيوب">▶️</a>
-                </div>
-            </div>
-            <div>
-                <h4>روابط</h4>
-                <ul>
-                    <li><a href="#home">الرئيسية</a></li>
-                    <li><a href="#about">عن الكلية</a></li>
-                    <li><a href="#departments">الأقسام</a></li>
-                    <li><a href="#student-portal">بوابة الطالب</a></li>
-                    <li><a href="#contact">اتصل بنا</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>خدمات</h4>
-                <ul>
-                    <li><a href="#student-portal">استعلام بالرقم القومي</a></li>
-                    <li><a href="#grades">نظام التقديرات</a></li>
-                    <li><a href="#">النتائج</a></li>
-                    <li><a href="#">الجدول الدراسي</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>الأقسام</h4>
-                <ul>
-                    <li><a href="#">التربية الرياضية</a></li>
-                    <li><a href="#">التدريب الرياضي</a></li>
-                    <li><a href="#">الإدارة الرياضية</a></li>
-                    <li><a href="#">علوم الحركة</a></li>
-                </ul>
-            </div>
+            <div><div class="f-logo"><span>🏛️</span><div><strong>كلية علوم الرياضة</strong><small lang="en">Sport Science College</small></div></div><p>نسعى لتحقيق الريادة في علوم الرياضة والتربية البدنية</p><div class="f-social"><a href="#" aria-label="تويتر">🐦</a><a href="#" aria-label="انستغرام">📸</a><a href="#" aria-label="فيسبوك">📘</a><a href="#" aria-label="يوتيوب">▶️</a></div></div>
+            <div><h4>روابط</h4><ul><li><a href="#home">الرئيسية</a></li><li><a href="#about">عن الكلية</a></li><li><a href="#departments">الأقسام</a></li><li><a href="#student-portal">بوابة الطالب</a></li><li><a href="#contact">اتصل بنا</a></li></ul></div>
+            <div><h4>خدمات</h4><ul><li><a href="#student-portal">استعلام بالرقم القومي</a></li><li><a href="#grades">نظام التقديرات</a></li><li><a href="#">النتائج</a></li><li><a href="#">الجدول الدراسي</a></li></ul></div>
+            <div><h4>الأقسام</h4><ul><li><a href="#">التربية الرياضية</a></li><li><a href="#">التدريب الرياضي</a></li><li><a href="#">الإدارة الرياضية</a></li><li><a href="#">علوم الحركة</a></li></ul></div>
         </div>
-        <div class="f-bottom">
-            <p>© 2025 كلية علوم الرياضة 🏅 جميع الحقوق محفوظة</p>
-        </div>
+        <div class="f-bottom"><p>© 2025 كلية علوم الرياضة 🏅 جميع الحقوق محفوظة</p></div>
     </div>
 </footer>
 
-<!-- SCROLL TOP -->
-<button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى" title="العودة للأعلى">⬆</button>
+<!-- FIXED ELEMENTS -->
+<button class="scroll-top" id="scrollTop" aria-label="العودة للأعلى">⬆</button>
 
-<!-- CHAT WIDGET -->
 <div class="chat-widget">
-    <button class="cw-btn" onclick="toggleChat()" aria-label="المحادثة المباشرة" title="المحادثة المباشرة">💬<span class="cw-badge">1</span></button>
-    <div class="cw-panel" id="cwPanel" role="dialog" aria-label="المحادثة المباشرة">
-        <div class="cw-head">
-            <h4>💬 المحادثات</h4>
-            <button onclick="toggleChat()" aria-label="إغلاق المحادثة">✕</button>
-        </div>
-        <div class="cw-msgs" id="cwMsgs" role="log" aria-live="polite">
-            <div class="msg msg-r"><div class="msg-b"><p>مرحباً! كيف يمكنني مساعدتك؟</p><small>المرشد الأكاديمي</small></div></div>
-        </div>
-        <div class="cw-input">
-            <input id="cwInput" placeholder="اكتب رسالة..." onkeypress="if(event.key==='Enter')sendCW()" aria-label="اكتب رسالتك">
-            <button onclick="sendCW()" aria-label="إرسال">📤</button>
-        </div>
+    <button class="cw-btn" onclick="toggleChat()" aria-label="المحادثة المباشرة">💬<span class="cw-badge">1</span></button>
+    <div class="cw-panel" id="cwPanel">
+        <div class="cw-head"><h4>💬 المحادثات</h4><button onclick="toggleChat()">✕</button></div>
+        <div class="cw-msgs" id="cwMsgs"><div class="msg msg-r"><div class="msg-b"><p>مرحباً! كيف يمكنني مساعدتك؟</p><small>المرشد الأكاديمي</small></div></div></div>
+        <div class="cw-input"><input id="cwInput" placeholder="اكتب رسالة..." onkeypress="if(event.key==='Enter')sendCW()"><button onclick="sendCW()">📤</button></div>
     </div>
 </div>
 
-<!-- LOGIN MODAL -->
-<div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-label="تسجيل الدخول">
+<!-- ========== MODALS ========== -->
+
+<!-- LOGIN -->
+<div class="modal-overlay" id="loginModal">
     <div class="modal">
-        <button class="mx" onclick="closeModals()" aria-label="إغلاق">✕</button>
-        <div class="login-tabs" role="tablist">
-            <button class="lt active" data-lt="login" role="tab" aria-selected="true">🔐 تسجيل دخول</button>
-            <button class="lt" data-lt="register" role="tab">📝 إنشاء حساب</button>
+        <button class="mx" onclick="closeModals()">✕</button>
+        <div class="login-tabs">
+            <button class="lt active" data-lt="login">🔐 تسجيل دخول</button>
+            <button class="lt" data-lt="register">📝 إنشاء حساب</button>
         </div>
-        <div class="lc active" id="lt-login" role="tabpanel">
+        <div class="lc active" id="lt-login">
             <div class="login-icon">🎓</div>
             <h3>تسجيل دخول الطالب</h3>
-            <form id="loginForm" novalidate>
-                <div class="form-group">
-                    <label for="loginId">الرقم القومي أو البريد</label>
-                    <input type="text" id="loginId" required placeholder="أدخل الرقم القومي أو البريد" autocomplete="username">
-                </div>
-                <div class="form-group">
-                    <label for="loginPass">كلمة المرور</label>
-                    <input type="password" id="loginPass" required placeholder="كلمة المرور" autocomplete="current-password">
-                    <small class="hint">💡 كلمة المرور الافتراضية: 123456</small>
-                </div>
+            <form id="loginForm">
+                <div class="form-group"><label>الرقم القومي أو البريد</label><input type="text" id="loginId" required placeholder="أدخل الرقم القومي أو البريد"></div>
+                <div class="form-group"><label>كلمة المرور</label><input type="password" id="loginPass" required placeholder="كلمة المرور"><small class="hint">💡 كلمة المرور الافتراضية: 123456</small></div>
                 <button type="submit" class="submit-btn">🔓 تسجيل الدخول</button>
             </form>
-            <div class="test-hint" style="margin-top:15px">
-                <p>🧪 <strong>للاختبار:</strong> رقم: 29901011234567 | كلمة المرور: 123456</p>
-                <p>⚙️ <strong>أدمن:</strong> admin | admin123</p>
-            </div>
+            <div class="test-hint" style="margin-top:15px"><p>🧪 <strong>للاختبار:</strong> رقم: 29901011234567 | كلمة المرور: 123456</p><p>⚙️ <strong>أدمن:</strong> admin | admin123</p></div>
         </div>
-        <div class="lc" id="lt-register" role="tabpanel">
+        <div class="lc" id="lt-register">
             <div class="login-icon">📝</div>
             <h3>إنشاء حساب جديد</h3>
-            <form id="registerForm" novalidate>
-                <div class="form-group">
-                    <label for="regName">الاسم الكامل *</label>
-                    <input type="text" required placeholder="مثال: أحمد محمد العلي" id="regName" autocomplete="name">
-                </div>
-                <div class="form-group">
-                    <label for="regNid">الرقم القومي (14 رقم) *</label>
-                    <input type="text" required placeholder="أدخل 14 رقم" maxlength="14" id="regNid" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')">
-                    <small class="hint">💡 رقم البطاقة الشخصية</small>
-                </div>
-                <div class="form-group">
-                    <label for="regEmail">البريد الإلكتروني *</label>
-                    <input type="email" required placeholder="example@email.com" id="regEmail" autocomplete="email">
-                </div>
-                <div class="form-group">
-                    <label for="regPhone">رقم الهاتف *</label>
-                    <input type="tel" required placeholder="01XXXXXXXXX" id="regPhone" autocomplete="tel">
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="regPass">كلمة المرور * (6+ أحرف)</label>
-                        <input type="password" required placeholder="كلمة المرور" minlength="6" id="regPass" autocomplete="new-password">
-                    </div>
-                    <div class="form-group">
-                        <label for="regPass2">تأكيد كلمة المرور *</label>
-                        <input type="password" required placeholder="أعد كتابتها" id="regPass2" autocomplete="new-password">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="regDept">القسم</label>
-                    <select id="regDept">
-                        <option value="">اختر</option>
-                        <option>التربية الرياضية</option>
-                        <option>التدريب الرياضي</option>
-                        <option>الإدارة الرياضية</option>
-                        <option>علوم الحركة والصحة</option>
-                    </select>
-                </div>
+            <form id="registerForm">
+                <div class="form-group"><label>الاسم الكامل *</label><input type="text" required placeholder="مثال: أحمد محمد العلي" id="regName"></div>
+                <div class="form-group"><label>الرقم القومي (14 رقم) *</label><input type="text" required placeholder="أدخل 14 رقم" maxlength="14" id="regNid" inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')"><small class="hint">💡 رقم البطاقة الشخصية</small></div>
+                <div class="form-group"><label>البريد الإلكتروني *</label><input type="email" required placeholder="example@email.com" id="regEmail"></div>
+                <div class="form-group"><label>رقم الهاتف *</label><input type="tel" required placeholder="01XXXXXXXXX" id="regPhone"></div>
+                <div class="form-row"><div class="form-group"><label>كلمة المرور * (6+ أحرف)</label><input type="password" required placeholder="كلمة المرور" minlength="6" id="regPass"></div><div class="form-group"><label>تأكيد كلمة المرور *</label><input type="password" required placeholder="أعد كتابتها" id="regPass2"></div></div>
+                <div class="form-group"><label>القسم</label><select id="regDept"><option value="">اختر</option><option>التربية الرياضية</option><option>التدريب الرياضي</option><option>الإدارة الرياضية</option><option>علوم الحركة والصحة</option></select></div>
                 <button type="submit" class="submit-btn">📝 إنشاء الحساب</button>
             </form>
         </div>
     </div>
 </div>
 
-<!-- SUCCESS MODAL -->
-<div class="modal-overlay" id="successModal" role="dialog" aria-modal="true">
-    <div class="modal success-m">
-        <div class="sm-icon">✅</div>
-        <h3 id="successTitle">تم بنجاح!</h3>
-        <p id="successMsg">تمت العملية بنجاح</p>
-        <button class="submit-btn" onclick="closeModals()">حسناً</button>
+<!-- EDIT PROFILE MODAL -->
+<div class="modal-overlay" id="editProfileModal">
+    <div class="modal edit-modal">
+        <button class="mx" onclick="closeModals()">✕</button>
+        <h3 class="edit-modal-title">✏️ تعديل البيانات الشخصية</h3>
+        <form id="editProfileForm">
+            <!-- Photo Upload -->
+            <div class="photo-upload-section">
+                <div class="photo-preview" id="editPhotoPreview">
+                    <img id="editPhotoImg" src="" alt="صورة الطالب">
+                    <div class="photo-fallback" id="editPhotoFallback">👨‍🎓</div>
+                </div>
+                <div class="photo-upload-btns">
+                    <label class="upload-btn">
+                        📷 اختر صورة
+                        <input type="file" id="editPhotoInput" accept="image/*" onchange="previewPhoto(this)" hidden>
+                    </label>
+                    <button type="button" class="remove-photo-btn" onclick="removePhoto()">🗑️ حذف الصورة</button>
+                </div>
+                <small class="hint">JPG, PNG - حد أقصى 2MB</small>
+            </div>
+
+            <input type="hidden" id="editNid">
+            <div class="form-group"><label>الاسم الكامل</label><input type="text" id="editName" required></div>
+            <div class="form-row">
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="editEmail" required></div>
+                <div class="form-group"><label>رقم الهاتف</label><input type="tel" id="editPhone" required></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>تاريخ الميلاد</label><input type="date" id="editDob"></div>
+                <div class="form-group"><label>الجنس</label><select id="editGender"><option value="male">ذكر</option><option value="female">أنثى</option></select></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>القسم</label><select id="editDept"><option>التربية الرياضية</option><option>التدريب الرياضي</option><option>الإدارة الرياضية</option><option>علوم الحركة والصحة</option></select></div>
+                <div class="form-group"><label>السنة الدراسية</label><select id="editYear"><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option></select></div>
+            </div>
+
+            <div class="edit-section-title">🔒 تغيير كلمة المرور (اختياري)</div>
+            <div class="form-row">
+                <div class="form-group"><label>كلمة المرور الجديدة</label><input type="password" id="editNewPass" placeholder="اتركها فارغة إذا لا تريد التغيير" minlength="6"></div>
+                <div class="form-group"><label>تأكيد كلمة المرور</label><input type="password" id="editNewPass2" placeholder="أعد كتابتها"></div>
+            </div>
+
+            <div class="edit-btns">
+                <button type="button" class="cancel-edit-btn" onclick="closeModals()">❌ إلغاء</button>
+                <button type="submit" class="save-edit-btn">💾 حفظ التعديلات</button>
+            </div>
+        </form>
     </div>
 </div>
 
+<!-- ADMIN EDIT STUDENT MODAL -->
+<div class="modal-overlay" id="adminEditModal">
+    <div class="modal edit-modal">
+        <button class="mx" onclick="closeModals()">✕</button>
+        <h3 class="edit-modal-title">⚙️ تعديل بيانات الطالب (أدمن)</h3>
+        <form id="adminEditForm">
+            <div class="photo-upload-section">
+                <div class="photo-preview" id="adminEditPhotoPreview">
+                    <img id="adminEditPhotoImg" src="" alt="صورة الطالب">
+                    <div class="photo-fallback" id="adminEditPhotoFallback">👨‍🎓</div>
+                </div>
+                <div class="photo-upload-btns">
+                    <label class="upload-btn">📷 اختر صورة<input type="file" id="adminEditPhotoInput" accept="image/*" onchange="adminPreviewPhoto(this)" hidden></label>
+                    <button type="button" class="remove-photo-btn" onclick="adminRemovePhoto()">🗑️ حذف</button>
+                </div>
+            </div>
+
+            <input type="hidden" id="aeNid">
+            <div class="form-row">
+                <div class="form-group"><label>الاسم الكامل *</label><input type="text" id="aeName" required></div>
+                <div class="form-group"><label>الرقم القومي</label><input type="text" id="aeNidDisplay" disabled class="disabled-input"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="aeEmail"></div>
+                <div class="form-group"><label>رقم الهاتف</label><input type="tel" id="aePhone"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>تاريخ الميلاد</label><input type="date" id="aeDob"></div>
+                <div class="form-group"><label>الجنس</label><select id="aeGender"><option value="male">ذكر</option><option value="female">أنثى</option></select></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>القسم</label><select id="aeDept"><option>التربية الرياضية</option><option>التدريب الرياضي</option><option>الإدارة الرياضية</option><option>علوم الحركة والصحة</option></select></div>
+                <div class="form-group"><label>السنة</label><select id="aeYear"><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option></select></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>الحالة</label><select id="aeStatus"><option>منتظم</option><option>منتظمة</option><option>مستجد</option><option>مستجدة</option><option>متوقف</option><option>مفصول</option></select></div>
+                <div class="form-group"><label>GPA</label><input type="number" id="aeGpa" step="0.01" min="0" max="4"></div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label>الساعات المكتملة</label><input type="number" id="aeHours" min="0"></div>
+                <div class="form-group"><label>إجمالي الساعات</label><input type="number" id="aeTotal" min="0"></div>
+            </div>
+            <div class="form-group"><label>التقدير</label><select id="aeGrade"><option>ممتاز مرتفع</option><option>ممتاز</option><option>جيد جداً مرتفع</option><option>جيد جداً</option><option>جيد</option><option>مقبول</option><option>-</option></select></div>
+
+            <div class="edit-section-title">🔒 إعادة تعيين كلمة المرور (اختياري)</div>
+            <div class="form-group"><label>كلمة المرور الجديدة</label><input type="password" id="aeNewPass" placeholder="اتركها فارغة لعدم التغيير" minlength="6"></div>
+
+            <div class="edit-btns">
+                <button type="button" class="delete-student-btn" onclick="deleteStudent()">🗑️ حذف الطالب</button>
+                <button type="button" class="cancel-edit-btn" onclick="closeModals()">❌ إلغاء</button>
+                <button type="submit" class="save-edit-btn">💾 حفظ</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- SUCCESS -->
+<div class="modal-overlay" id="successModal"><div class="modal success-m"><div class="sm-icon">✅</div><h3 id="successTitle">تم بنجاح!</h3><p id="successMsg">تمت العملية بنجاح</p><button class="submit-btn" onclick="closeModals()">حسناً</button></div></div>
+
 <!-- LIGHTBOX -->
-<div class="modal-overlay" id="lightboxModal" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+<div class="modal-overlay" id="lightboxModal">
     <div class="modal lightbox-m">
-        <button class="mx" onclick="closeModals()" aria-label="إغلاق">✕</button>
+        <button class="mx" onclick="closeModals()">✕</button>
         <div class="lb-img" id="lbImg"></div>
         <div class="lb-info"><h4 id="lbTitle">-</h4><p id="lbDate">-</p></div>
     </div>
 </div>
 
 <!-- ADMIN PANEL -->
-<div class="modal-overlay" id="adminModal" role="dialog" aria-modal="true" aria-label="لوحة التحكم">
+<div class="modal-overlay" id="adminModal">
     <div class="modal admin-m">
-        <button class="mx" onclick="closeModals()" aria-label="إغلاق لوحة التحكم">✕</button>
+        <button class="mx" onclick="closeModals()">✕</button>
         <div class="admin-wrap">
-            <aside class="admin-side" role="navigation" aria-label="قائمة لوحة التحكم">
+            <aside class="admin-side">
                 <div class="admin-logo"><span>🏛️</span><h4>لوحة التحكم</h4></div>
                 <button class="anav active" onclick="switchAdmin('dash',this)">📊 الرئيسية</button>
                 <button class="anav" onclick="switchAdmin('students',this)">👨‍🎓 الطلاب</button>
@@ -703,28 +591,34 @@
                 <div class="ap active" id="ap-dash">
                     <h2>📊 لوحة المعلومات</h2>
                     <div class="dash-cards">
-                        <div class="dc" style="border-right:4px solid #10b981"><span style="color:#10b981">👨‍🎓</span><div><strong>1,200</strong><small>طالب</small></div></div>
+                        <div class="dc" style="border-right:4px solid #10b981"><span style="color:#10b981">👨‍🎓</span><div><strong id="dashStudentCount">0</strong><small>طالب</small></div></div>
                         <div class="dc" style="border-right:4px solid #3b82f6"><span style="color:#3b82f6">👨‍🏫</span><div><strong>85</strong><small>أستاذ</small></div></div>
                         <div class="dc" style="border-right:4px solid #f59e0b"><span style="color:#f59e0b">📚</span><div><strong>48</strong><small>مقرر</small></div></div>
                         <div class="dc" style="border-right:4px solid #ef4444"><span style="color:#ef4444">⚠️</span><div><strong>23</strong><small>إنذار</small></div></div>
                     </div>
-                    <div class="activity-box">
-                        <h4>🕐 آخر الأنشطة</h4>
-                        <div class="act-item"><span class="act-i" style="background:rgba(16,185,129,.1)">✅</span><div><strong>تم رصد درجات التشريح</strong><small>منذ 5 دقائق</small></div></div>
-                        <div class="act-item"><span class="act-i" style="background:rgba(59,130,246,.1)">👨‍🎓</span><div><strong>تسجيل طالب جديد</strong><small>منذ 30 دقيقة</small></div></div>
-                        <div class="act-item"><span class="act-i" style="background:rgba(239,68,68,.1)">⚠️</span><div><strong>إنذار غياب</strong><small>منذ ساعة</small></div></div>
-                    </div>
+                    <div class="activity-box"><h4>🕐 آخر الأنشطة</h4><div id="activityList"></div></div>
                 </div>
-                <!-- Students -->
+                                <!-- استبدل قسم ap-students في index.html -->
                 <div class="ap" id="ap-students">
                     <h2>👨‍🎓 إدارة الطلاب</h2>
                     <div class="toolbar">
-                        <input placeholder="🔍 بحث..." oninput="searchAdmin(this.value)" aria-label="بحث في الطلاب">
-                        <button class="tbtn" onclick="exportStudents()">📥 تصدير</button>
+                        <input placeholder="🔍 بحث بالاسم أو الرقم..." oninput="searchAdmin(this.value)" aria-label="بحث في الطلاب">
+                        <button class="tbtn" onclick="adminAddStudent()" style="background:var(--green)">➕ إضافة طالب</button>
+                        <button class="tbtn" onclick="exportStudents()">📥 تصدير CSV</button>
+                        <button class="tbtn" onclick="resetDB()" style="background:var(--red)">🔄 إعادة ضبط</button>
                     </div>
                     <div class="table-responsive">
                         <table class="data-table">
-                            <thead><tr><th>الرقم القومي</th><th>الاسم</th><th>القسم</th><th>السنة</th><th lang="en">GPA</th><th>الحالة</th></tr></thead>
+                            <thead>
+                                <tr>
+                                    <th>الطالب</th>
+                                    <th>القسم</th>
+                                    <th>السنة</th>
+                                    <th>GPA</th>
+                                    <th>الحالة</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
                             <tbody id="adminBody"></tbody>
                         </table>
                     </div>
@@ -732,17 +626,8 @@
                 <!-- Attendance -->
                 <div class="ap" id="ap-att">
                     <h2>📋 كشف الحضور</h2>
-                    <div class="toolbar">
-                        <input type="date" value="2024-12-15" aria-label="التاريخ">
-                        <select aria-label="المادة"><option>تدريب رياضي متقدم</option><option>البحث العلمي</option><option>الإصابات الرياضية</option></select>
-                        <button class="tbtn" onclick="loadAtt()">📋 عرض</button>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead><tr><th>م</th><th>الاسم</th><th>حاضر</th><th>غائب</th><th>عذر</th></tr></thead>
-                            <tbody id="attBody"></tbody>
-                        </table>
-                    </div>
+                    <div class="toolbar"><input type="date" value="2024-12-15"><select><option>تدريب رياضي متقدم</option><option>البحث العلمي</option><option>الإصابات الرياضية</option></select><button class="tbtn" onclick="loadAtt()">📋 عرض</button></div>
+                    <div class="table-responsive"><table class="data-table"><thead><tr><th>م</th><th>الاسم</th><th>حاضر</th><th>غائب</th><th>عذر</th></tr></thead><tbody id="attBody"></tbody></table></div>
                     <button class="tbtn" style="margin-top:15px" onclick="saveAttendance()">💾 حفظ</button>
                 </div>
                 <!-- Chat -->
@@ -756,14 +641,8 @@
                         </div>
                         <div class="ach-main">
                             <div class="ach-head"><span>👨‍🎓</span><strong id="achName">أحمد محمد</strong></div>
-                            <div class="ach-msgs" id="achMsgs" role="log" aria-live="polite">
-                                <div class="msg msg-r"><div class="msg-b"><p>السلام عليكم أستاذ، محتاج استفسار</p><small>10:30 ص</small></div></div>
-                                <div class="msg msg-s"><div class="msg-b"><p>أهلاً أحمد، تفضل</p><small>10:35 ص</small></div></div>
-                            </div>
-                            <div class="ach-input">
-                                <input id="achInput" placeholder="اكتب رد..." onkeypress="if(event.key==='Enter')sendAch()" aria-label="اكتب الرد">
-                                <button onclick="sendAch()" aria-label="إرسال">📤</button>
-                            </div>
+                            <div class="ach-msgs" id="achMsgs"><div class="msg msg-r"><div class="msg-b"><p>السلام عليكم أستاذ، محتاج استفسار</p><small>10:30 ص</small></div></div><div class="msg msg-s"><div class="msg-b"><p>أهلاً أحمد، تفضل</p><small>10:35 ص</small></div></div></div>
+                            <div class="ach-input"><input id="achInput" placeholder="اكتب رد..." onkeypress="if(event.key==='Enter')sendAch()"><button onclick="sendAch()">📤</button></div>
                         </div>
                     </div>
                 </div>
@@ -771,19 +650,8 @@
                 <div class="ap" id="ap-settings">
                     <h2>⚙️ الإعدادات</h2>
                     <div class="settings-box">
-                        <div class="set-card">
-                            <h4>🏛️ معلومات الكلية</h4>
-                            <div class="form-group"><label>اسم الكلية</label><input value="كلية علوم الرياضة"></div>
-                            <div class="form-group"><label>البريد</label><input value="info@ssc.edu.sa" dir="ltr"></div>
-                            <button class="tbtn" onclick="showSuccess('تم الحفظ! ✅','تم حفظ إعدادات الكلية بنجاح')">💾 حفظ</button>
-                        </div>
-                        <div class="set-card">
-                            <h4>📧 البريد الجماعي</h4>
-                            <div class="form-group"><label>المرسل إليهم</label><select><option>جميع الطلاب</option><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option></select></div>
-                            <div class="form-group"><label>الموضوع</label><input placeholder="موضوع البريد"></div>
-                            <div class="form-group"><label>المحتوى</label><textarea placeholder="محتوى الرسالة..."></textarea></div>
-                            <button class="tbtn" onclick="showSuccess('تم الإرسال! 📧','تم إرسال البريد لـ 1,200 طالب بنجاح')">📧 إرسال</button>
-                        </div>
+                        <div class="set-card"><h4>🏛️ معلومات الكلية</h4><div class="form-group"><label>اسم الكلية</label><input value="كلية علوم الرياضة"></div><div class="form-group"><label>البريد</label><input value="info@ssc.edu.sa" dir="ltr"></div><button class="tbtn" onclick="showSuccess('تم الحفظ! ✅','تم حفظ الإعدادات')">💾 حفظ</button></div>
+                        <div class="set-card"><h4>📧 البريد الجماعي</h4><div class="form-group"><label>المرسل إليهم</label><select><option>جميع الطلاب</option><option>السنة الأولى</option><option>السنة الثانية</option><option>السنة الثالثة</option><option>السنة الرابعة</option></select></div><div class="form-group"><label>الموضوع</label><input placeholder="موضوع البريد"></div><div class="form-group"><label>المحتوى</label><textarea placeholder="محتوى الرسالة..."></textarea></div><button class="tbtn" onclick="showSuccess('تم الإرسال! 📧','تم إرسال البريد بنجاح')">📧 إرسال</button></div>
                     </div>
                 </div>
             </main>
@@ -791,7 +659,7 @@
     </div>
 </div>
 
-<!-- Toast Notification -->
+<!-- Toast -->
 <div class="toast-container" id="toastContainer"></div>
 
 <script src="script.js"></script>
